@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UCM Campus</title>
+    <link
+        href="https://ucmcampus.ac.id/cloudme.fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://ucmcampus.ac.id/css/app.css">
+    <script src="https://ucmcampus.ac.id/js/app.js" defer></script>
+    <style>
+        .fade {
+            animation-name: fade;
+            animation-duration: 2s
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body class="font-rubik">
+    <div class="bg-ucm w-full flex justify-end">
+        <a href="/login">
+            <button type="button"
+                class="focus:outline-none text-white focus:ring-4 font-medium text-sm px-4 py-1 mr-36 my-3 bg-red-600 hover:bg-red-700 focus:ring-red-900"><span
+                    class="opacity-90">Login</span></button>
+        </a>
+    </div>
+    <header class="relative mb-12 md:mb-20 lg:mb-24 max-h-full">
+        <nav class="flex justify-between text-white items-center px-14 py-8 z-10 w-full absolute">
+            <a href="/"><img src="/images/logoucm3.png" alt="" class="w-0 md:w-44 lg:w-64 flex-1"></a>
+            <svg class="block lg:hidden w-6 h-6 -mr-6 text-black cursor-pointer" id="burger" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
+            <div class="space-x-4 lg:space-x-10 text-md lg:text-lg font-semibold tracking-wide hidden top-32 lg:flex"
+                id="menu" ">
+<a href=" /about-us"
+                class="border-b-4 border-transparent hover:text-ucm hover:border-ucm transition ease-in-out duration-300">
+                About Us</a>
+                <a href="/study-program"
+                    class="border-b-4 border-transparent hover:text-ucm hover:border-ucm transition ease-in-out duration-300">Study
+                    Program</a>
+                <a href="/news-events/events"
+                    class="border-b-4 border-transparent hover:text-ucm hover:border-ucm transition ease-in-out duration-300">News
+                    & Events</a>
+                <a href="/facilities"
+                    class="border-b-4 border-transparent hover:text-ucm hover:border-ucm transition ease-in-out duration-300">Facilities</a>
+                <a href="/contact-us"
+                    class="border-b-4 border-transparent hover:text-ucm hover:border-ucm transition ease-in-out duration-300">Contact
+                    Us</a>
+            </div>
+        </nav>
+        <div class="w-full">
+            <div class="mySlides1 animate__animated animate__fadeIn">
+                <img src="images/lobby.jpeg" class="w-full ">
+            </div>
+            <div class="mySlides1 animate__animated animate__fadeIn">
+                <img src="images/banner1.jpeg" class="w-full">
+            </div>
+            <div class="mySlides1 animate__animated animate__fadeIn">
+                <img src="images/banner2.jpg" class="w-full">
+            </div>
+            <a class="prev absolute top-1/2 cursor-pointer ml-3 text-white hover:scale-125 transition ease-in-out duration-300 hover:text-ucm"
+                onclick="plusSlides(-1, 0)"><svg class="w-4 lg:w-8" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg></a>
+            <a class="next absolute top-1/2 right-0 mr-3 cursor-pointer text-white hover:scale-125 transition ease-in-out duration-300 hover:text-ucm"
+                onclick="plusSlides(1, 0);"><svg class="w-4 lg:w-8" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg></a>
+        </div>
+    </header>
+    <div class="whychooseus max-w-6xl mx-auto mb-5 px-10">
+        <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-ucm mb-5 md:mb-10 tracking-wide">WHY CHOOSE UCM ?
+        </h1>
+        <div class="group mb-2">
+            <div class=" flex items-center">
+                <svg class="w-6 h-6 text-ucm group-hover:text-red-600" " fill=" none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                    </path>
+                </svg>
+                <p
+                    class="font-semibold text-sm md:text-2xl lg:text-3xl text-black tracking-normal lg:tracking-wider uppercase pl-2 group-hover:text-red-600 transition duration-150">
+                    College Program D3 + S1 (Advanced Diploma + Bachelor)</p>
+            </div>
+        </div>
+        <div class="group mb-2">
+            <div class="flex items-center">
+                <svg class="w-6 h-6 text-ucm group-hover:text-red-600" " fill=" none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                    </path>
+                </svg>
+                <p
+                    class="font-semibold text-xl md:text-2xl lg:text-3xl text-black tracking-wider uppercase pl-2 group-hover:text-red-600 transition duration-150">
+                    Soft Skill Class</p>
+            </div>
+            <ul class="hidden group-hover:block text-left pl-8 text-gray-500 mb-4">
+                <li>Entrepreneur Class</li>
+                <li>Character Building Class</li>
+                <li>Public Speaking Class</li>
+                <li>Start Up Digital Class</li>
+            </ul>
+        </div>
+        <div class="group mb-2">
+            <div class=" flex items-center">
+                <svg class="w-6 h-6 text-ucm group-hover:text-red-600" " fill=" none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                    </path>
+                </svg>
+                <p
+                    class="font-semibold text-xl md:text-2xl lg:text-3xl text-black tracking-wider uppercase group-hover:text-red-600 transition duration-150 pl-2">
+                    70% Practical Subjects</p>
+            </div>
+        </div>
+        <div class="group mb-2">
+            <div class="flex items-center">
+                <svg class="w-6 h-6 text-ucm group-hover:text-red-600" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                    </path>
+                </svg>
+                <p
+                    class="font-semibold text-xl md:text-2xl lg:text-3xl text-black tracking-wider uppercase group-hover:text-red-600 transition duration-150 pl-2">
+                    Qualified Lecturers</p>
+            </div>
+            <p class="hidden group-hover:block text-left pl-8 text-gray-500 mb-4">Master and Phd graduated lecturers and
+                practitioner lecturers.</p>
+        </div>
+        <div class="group mb-2">
+            <div class=" flex items-center">
+                <svg class="w-6 h-6 text-ucm group-hover:text-red-600" " fill=" none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                    </path>
+                </svg>
+                <p
+                    class="font-semibold text-sm md:text-2xl lg:text-3xl text-black tracking-normal lg:tracking-wider uppercase group-hover:text-red-600 transition duration-150 pl-2">
+                    Scholarship up to 100% (Bachelor + Master Degree)</p>
+            </div>
+        </div>
+        <div class="group mb-2">
+            <div class=" flex items-center">
+                <svg class="w-6 h-6 text-ucm group-hover:text-red-600" " fill=" none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                    </path>
+                </svg>
+                <p
+                    class="font-semibold text-xl md:text-2xl lg:text-3xl text-black tracking-wider uppercase group-hover:text-red-600 transition duration-150 pl-2">
+                    Overseas Study Tour</p>
+            </div>
+        </div>
+    </div>
+    <div class="testimonials max-w-6xl mx-auto mt-16 lg:mt-24 mb-32 px-10">
+        <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-ucm tracking-wide">TESTIMONIALS</h1>
+        <div class="lg:flex mt-8">
+            <div class="mySlides2 flex-shrink-0">
+                <img src="images/testimonial1.jpg" alt=""
+                    class="shadow-2xl w-3/5 md:w-2/5 lg:w-auto animate__animated animate__fadeInLeft">
+            </div>
+            <div class="mySlides2 flex-shrink-0">
+                <img src="images/testimonial2.jpg" alt=""
+                    class="shadow-2xl w-3/5 md:w-2/5 lg:w-auto animate__animated animate__fadeInLeft">
+            </div>
+            <div class="mySlides2 flex-shrink-0">
+                <img src="images/testimonial3.jpg" alt=""
+                    class="shadow-2xl w-3/5 md:w-2/5 lg:w-auto animate__animated animate__fadeInLeft">
+            </div>
+            <div class="mySlides2 flex-shrink-0">
+                <img src="images/testimonial4.jpg" alt=""
+                    class="shadow-2xl w-3/5 md:w-2/5 lg:w-auto animate__animated animate__fadeInLeft">
+            </div>
+            <div class="mySlides2 flex-shrink-0">
+                <img src="images/testimonial5.jpg" alt=""
+                    class="shadow-2xl w-3/5 md:w-2/5 lg:w-auto animate__animated animate__fadeInLeft">
+            </div>
+            <div class="mySlides2 flex-shrink-0">
+                <img src="images/testimonial6.jpg" alt=""
+                    class="shadow-2xl w-3/5 md:w-2/5 lg:w-auto animate__animated animate__fadeInLeft">
+            </div>
+            <div class="mySlides2 flex-shrink-0">
+                <img src="images/testimonial7.jpg" alt=""
+                    class="shadow-2xl w-3/5 md:w-2/5 lg:w-auto animate__animated animate__fadeInLeft">
+            </div>
+            <div class="mySlides2 flex-shrink-0">
+                <img src="images/testimonial8.jpg" alt=""
+                    class="shadow-2xl w-3/5 md:w-2/5 lg:w-auto animate__animated animate__fadeInLeft">
+            </div>
+            <div class="mySlides2 flex-shrink-0">
+                <img src="images/testimonial9.jpg" alt=""
+                    class="shadow-2xl w-3/5 md:w-2/5 lg:w-auto animate__animated animate__fadeInLeft">
+            </div>
+            <div class="lg:ml-14 pt-8 flex flex-col justify-between relative">
+                <div class="mySlides3 space-y-6 animate__animated animate__backInRight">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl">Arvin Julius</h1>
+                    <img src="images/quote.png" alt="" class="absolute right-0 w-2/5 sm:w-2/5">
+                    <p class="font-light text-lg md:text-xl lg:text-2xl text-gray-700">Business Administration - Sem 6
+                    </p>
+                    <p class="text-gray-500 text-base md:text-lg">"Studying at UCM Campus is more practical because it
+                        is a vocational
+                        campus so that lectures don't feel boring and I get more skills."</p>
+                </div>
+                <div class="mySlides3 space-y-6 animate__animated animate__backInRight">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl">Jose Renaldo Tamdy, A.Md.A.B.</h1>
+                    <img src="images/quote.png" alt="" class="absolute right-0 w-3/5 sm:w-2/5">
+                    <p class="font-light text-lg md:text-xl lg:text-2xl text-gray-700">Online Business Owner - Alumni
+                    </p>
+                    <p class="text-gray-500 text-base md:text-lg">"Initially I planned to take D3+ S1 program at UCM
+                        Campus.
+                        However, in the third year, I got an offer to expand my online business
+                        to Jakarta. At that time, I thought to focus on my business and luckily
+                        I have completed my Advanced Diploma so that I can continue
+                        my bachelor in Jakarta whenever I am ready to
+                        continue my study again."</p>
+                </div>
+                <div class="mySlides3 space-y-6 animate__animated animate__backInRight">
+                    <h1 class="text-4xl">Mayshara, A.Md.A.B., S.E.</h1>
+                    <img src="images/quote.png" alt="" class="absolute right-0 w-3/5 md:w-auto">
+                    <p class="font-light text-2xl text-gray-700">Alumni</p>
+                    <p class="text-gray-500 text-lg">"Studying at UCM Campus was one of my best choices. I finished my
+                        studies with 2 degrees, D3+S1 in 4 years. All of my lecturers are very good and there is no
+                        difficulty for me to complete my advanced diploma and bachelor degrees."</p>
+                </div>
+                <div class="mySlides3 space-y-6 animate__animated animate__backInRight">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl">Vitria Sandrica</h1>
+                    <img src="images/quote.png" alt="" class="absolute right-0 w-3/5 md:w-auto">
+                    <p class="font-light text-lg md:text-xl lg:text-2xl text-gray-700">Alumni</p>
+                    <p class="text-gray-500 text-base md:text-lg">"Saya senang bisa belajar di kampus UCM, walaupun 2
+                        tahun belakangan ini harus belajar secara online, para dosen pun ttp mengajar dengan cara mereka
+                        masing" supaya mahasiswa nya tidak bosan, kami juga diajarkan mengenai kehidupan diluar kampus
+                        sehingga bisa mendapatkan banyak ilmu dan pengalaman. Lingkungan kampus juga nyaman, untuk
+                        fasilitas kampus juga lengkap sehingga mendukung kegiatan belajar mahasiswa ucm."</p>
+                </div>
+                <div class="mySlides3 space-y-6 animate__animated animate__backInRight">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl">Meilisan Dewi</h1>
+                    <img src="images/quote.png" alt="" class="absolute right-0 w-2/5 md:w-auto">
+                    <p class="font-light text-lg md:text-xl lg:text-2xl text-gray-700">Tax Management - Sem 4</p>
+                    <p class="text-gray-500 text-base md:text-lg">"Saya mahasiswa prodi manajemen perpajakan politeknik
+                        ucm. Saya merasa senang bisa kuliah di politeknik ucm karena saya banyak mendapatkan banyak
+                        pengalaman baik dari dosen maupun teman-teman dari daerah yang berbeda. Dosen yang saya temui
+                        sangat baik dan juga antusias dalam mengajar."</p>
+                </div>
+                <div class="mySlides3 space-y-6 animate__animated animate__backInRight">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl">Jimmi</h1>
+                    <img src="images/quote.png" alt="" class="absolute right-0 w-3/5 md:w-auto">
+                    <p class="font-light text-lg md:text-xl lg:text-2xl text-gray-700">Accounting - Sem 6</p>
+                    <p class="text-gray-500 text-base md:text-lg">"Satu kebanggaan dapat menjadi mahasiswa dan bagian
+                        kecil dari keluarga Politeknik UCM. Politeknik UCM adalah sebuah kampus dengan dosen-dosen yang
+                        kompeten, membimbing mahasiswa dengan ramah serta mengembangkan talenta setiap mahasiswa untuk
+                        terus tumbuh berkembang dengan penuh perhatian.
+                        <br>
+                        Jangan tanya kenapa saya memilih Politeknik UCM! <br>
+                        Tanyakan kepada diri anda kenapa tidak memilih Politeknik UCM?"
+                    </p>
+                </div>
+                <div class="mySlides3 space-y-6 animate__animated animate__backInRight">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl">Reo Pangga Surbakti</h1>
+                    <img src="images/quote.png" alt="" class="absolute right-0 w-2/5 md:w-auto">
+                    <p class="font-light text-lg md:text-xl lg:text-2xl text-gray-700">Hospitality - Sem 2</p>
+                    <p class="text-gray-500 text-base md:text-lg">"Sejak saya bergabung di UCM Campus, saya merasa
+                        percaya diri karena perkuliahan disini lebih banyak prakteknya daripada teori. Perkuliahan yang
+                        interaktif antara saya dengan dosen dan kawan-kawan membuat saya tidak mudah bosan dan fasilitas
+                        di UCM sangat lengkap"</p>
+                </div>
+                <div class="mySlides3 space-y-6 animate__animated animate__backInRight">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl">David</h1>
+                    <img src="images/quote.png" alt="" class="absolute right-0 w-4/5 md:w-auto">
+                    <p class="font-light text-lg md:text-xl lg:text-2xl text-gray-700">Accounting - Sem 6</p>
+                    <p class="text-gray-500 text-base md:text-lg">"Selama saya mengikuti perkuliahan di Politeknik UCM,
+                        proses pembelajaran berjalan sangat menyenangkan, terutama selama saya mengikuti pembelajaran
+                        online di era pandemi ini, Dosen sangat sabar dan terampil dalam memberikan perkuliahan melalui
+                        media Zoom, Google Meet dan media lainnya. Dosen Akuntansi di Politeknik UCM sangat displin dan
+                        selalu mengajar tepat pada waktunya. Dosen sangat ramah dan mampu memberikan feedback terhadap
+                        setiap pertanyaan saya agar saya mampu memahami dan menyelesaikan tugas - tugas yang diberikan.
+                        Saya sebagai Mahasiswa bangga menjadi bagian dari Politeknik UCM!"</p>
+                </div>
+                <div class="mySlides3 space-y-6 animate__animated animate__backInRight">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl">Patrick Kungsa</h1>
+                    <img src="images/quote.png" alt="" class="absolute right-0 w-2/5 md:w-auto">
+                    <p class="font-light text-lg md:text-xl lg:text-2xl text-gray-700">Tax Management - Sem 4</p>
+                    <p class="text-gray-500 text-base md:text-lg">"Kesan dan pesan saya selama belajar di kampus UCM:
+                        Banyak hal baru yang saya pelajari dan temui, teman dengan berbagai macam karakter, dosen dengan
+                        beragam ilmu yang luar biasa."</p>
+                </div>
+                <div class="flex space-x-4 pt-3 lg:pt-0">
+                    <a class="prev cursor-pointer" onclick="plusSlides(-1,1);plusSlides(-1,2)"><svg
+                            class=" w-8 lg:w-12 rounded-full bg-gray-300 hover:scale-125 hover:bg-ucm text-white transition ease-in-out duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg></a>
+                    <a class="next cursor-pointer" onclick="plusSlides(1,1);plusSlides(1,2)"><svg
+                            class=" w-8 lg:w-12 rounded-full bg-gray-300 hover:scale-125 hover:bg-ucm text-white transition ease-in-out duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="affliatedpartners max-w-6xl mx-auto px-10">
+        <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-ucm tracking-wide">AFFILIATED PARTNERS</h1>
+        <div class="flex items-center gap-x-14">
+            <img src="images/logoitnb.png" alt="ITNB" class="w-32 lg:w-44">
+            <img src="images/logombp.png" alt="MBP" class="w-32 lg:w-44">
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <div class="fixed bottom-5 right-5">
+        <a href="https://wa.me/6285315227512?text=Hello%20UCM%20Campus!%20nama%20saya%20..." target="blank">
+            <img src="images/whatsapp3.gif" alt=""
+                class="bg-none text-transparent w-12 md:w-20 transition duration-300 hover:scale-125">
+        </a>
+    </div>
+    <footer class="max-w-full bg-ucm px-14 pt-14 pb-2 mt-40">
+        <div
+            class="max-w-6xl md:flex md:space-x-6 lg:space-x-0  space-y-4 lg:space-y-0 justify-evenly mx-auto items-start border-b-2 border-gray-500 pb-6">
+            <img src="/images/logoucm3.png" alt="" class="w-64 md:w-72 lg:w-80 md:mt-2 lg:-mt-2">
+            <ul class="text-white text-sm uppercase pt-2 md:pt-0 md:pl-5">
+                <a href="/about-us" class="mr-1 sm:text-sm md:text-base hover:text-slate-500">
+                    <li>About Us</li>
+                </a>
+                <a href="/study-program" class="mr-1 sm:text-sm md:text-base hover:text-slate-500">
+                    <li>Study Program</li>
+                </a>
+                <a href="/news-events" class="mr-1 sm:text-sm md:text-base hover:text-slate-500">
+                    <li>News & Event</li>
+                </a>
+            </ul>
+            <ul class="text-white text-sm">
+                <div class="uppercase">
+                    <a href="/facilities" class="mr-1 sm:text-sm md:text-base hover:text-slate-500">
+                        <li>Facilities</li>
+                    </a>
+                    <a href="/contact-us" class="mr-1 sm:text-sm md:text-base hover:text-slate-500">
+                        <li>Contact Us</li>
+                    </a>
+                </div>
+                <div class="text-sm text-white space-y-2 hidden md:block lg:hidden">
+                    <p>Jl. Bambu I No.102,</p>
+                    <p>Kota Medan, Sumatera Utara </p>
+                    <p>(061) 42001546 / 08116710138</p>
+                    <p>info@ucmcampus.ac.id</p>
+                    <div class="flex space-x-4">
+                        <a href="https://m.youtube.com/watch?v=LBxIDhGuI9s&feature=youtu.be"><svg viewBox="0 0 16 19"
+                                class="w-6 mt-2 text-white transition-all cursor-pointer hover:text-slate-500 lg:w-6">
+                                <g class="fill-current" fill-rule="nonzero">
+                                    <path
+                                        d="M6.4 0H5.371l-.685 2.629L4 0H2.857c.229.686.457 1.257.686 1.943.343.914.571 1.714.571 2.171v2.743h1.029V4.114L6.4 0zm2.743 5.143V3.429c0-.572-.114-.915-.343-1.258-.229-.342-.571-.457-1.029-.457-.457 0-.8.229-1.028.572-.229.228-.343.571-.343 1.143v1.828c0 .572.114.914.343 1.143.228.343.571.457 1.028.457.458 0 .8-.228 1.029-.571.229-.115.343-.572.343-1.143zm-.914.228c0 .458-.115.686-.458.686-.342 0-.457-.228-.457-.686V3.2c0-.457.115-.686.457-.686.343 0 .458.229.458.686v2.171zm4.342 1.486V1.714h-.914V5.6c-.228.343-.343.457-.571.457a.246.246 0 0 1-.229-.228V1.714h-.914v4c0 .343 0 .572.114.8 0 .229.229.343.572.343.342 0 .685-.228 1.028-.571v.571h.914zM13.029 12c-.343 0-.458.229-.458.686v.457h.915v-.457c0-.457-.115-.686-.457-.686zM9.714 12c-.114 0-.343.114-.457.229v3.085c.114.115.343.229.457.229.229 0 .343-.229.343-.686v-2.171c0-.457-.114-.686-.343-.686z">
+                                    </path>
+                                    <path
+                                        d="M15.314 9.486C15.086 8.686 14.4 8 13.714 8 11.886 7.771 9.943 7.771 8 7.771c-1.943 0-3.771 0-5.714.229-.686 0-1.372.686-1.6 1.486-.229 1.143-.229 2.4-.229 3.543 0 1.142 0 2.4.229 3.542.228.8.8 1.372 1.6 1.486 1.943.229 3.771.229 5.714.229 1.943 0 3.771 0 5.714-.229.8-.114 1.486-.686 1.6-1.486.229-1.142.229-2.4.229-3.542 0-1.143 0-2.4-.229-3.543zM4.8 10.514H3.657v5.829H2.63v-5.829H1.6V9.486h3.2v1.028zm2.743 5.829h-.914v-.572c-.343.458-.686.572-1.029.572-.343 0-.457-.114-.571-.343 0-.114-.115-.343-.115-.8v-4h.915v4c0 .114.114.229.228.229.229 0 .343-.115.572-.458V11.2h.914v5.143zm3.428-1.6c0 .457 0 .8-.114 1.028-.114.343-.343.572-.686.572-.342 0-.685-.229-.914-.572v.458h-.914V9.486h.914v2.171c.343-.343.572-.571.914-.571.343 0 .572.228.686.571.114.229.114.572.114 1.029v2.057zm3.429-.8h-1.829v.914c0 .457.115.686.458.686.228 0 .342-.114.457-.343v-.571h.914V15.314c0 .229-.114.343-.229.572-.228.343-.571.571-1.142.571-.458 0-.8-.228-1.143-.571-.229-.229-.343-.686-.343-1.143v-1.714c0-.572.114-.915.228-1.143.229-.343.572-.572 1.143-.572.457 0 .8.229 1.029.572.228.228.228.685.228 1.143v.914h.229z">
+                                    </path>
+                                </g>
+                            </svg></a>
+                        <a href="https://instagram.com/poltekucm?igshid=YmMyMTA2M2Y="><svg
+                                xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                class="fill-white cursor-pointer hover:fill-slate-500 w-8 lg:w-7 mt-2"
+                                viewBox="0 0 48 48">
+                                <path
+                                    d="M 16.5 5 C 10.16639 5 5 10.16639 5 16.5 L 5 31.5 C 5 37.832757 10.166209 43 16.5 43 L 31.5 43 C 37.832938 43 43 37.832938 43 31.5 L 43 16.5 C 43 10.166209 37.832757 5 31.5 5 L 16.5 5 z M 16.5 8 L 31.5 8 C 36.211243 8 40 11.787791 40 16.5 L 40 31.5 C 40 36.211062 36.211062 40 31.5 40 L 16.5 40 C 11.787791 40 8 36.211243 8 31.5 L 8 16.5 C 8 11.78761 11.78761 8 16.5 8 z M 34 12 C 32.895 12 32 12.895 32 14 C 32 15.105 32.895 16 34 16 C 35.105 16 36 15.105 36 14 C 36 12.895 35.105 12 34 12 z M 24 14 C 18.495178 14 14 18.495178 14 24 C 14 29.504822 18.495178 34 24 34 C 29.504822 34 34 29.504822 34 24 C 34 18.495178 29.504822 14 24 14 z M 24 17 C 27.883178 17 31 20.116822 31 24 C 31 27.883178 27.883178 31 24 31 C 20.116822 31 17 27.883178 17 24 C 17 20.116822 20.116822 17 24 17 z">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
+            </ul>
+            <div class="text-sm text-white space-y-2 md:hidden lg:block">
+                <p>Jl. Bambu I No.102,Durian,</p>
+                <p>Kota Medan, Sumatera Utara - Indonesia</p>
+                <p>(061) 4200 1546 / 0811 6710 138</p>
+                <p>info@ucmcampus.ac.id</p>
+                <div class="flex space-x-4">
+                    <a href="https://m.youtube.com/watch?v=LBxIDhGuI9s&feature=youtu.be"><svg viewBox="0 0 16 19"
+                            class="w-6 mt-2 text-white transition-all cursor-pointer hover:text-slate-500 lg:w-6">
+                            <g class="fill-current" fill-rule="nonzero">
+                                <path
+                                    d="M6.4 0H5.371l-.685 2.629L4 0H2.857c.229.686.457 1.257.686 1.943.343.914.571 1.714.571 2.171v2.743h1.029V4.114L6.4 0zm2.743 5.143V3.429c0-.572-.114-.915-.343-1.258-.229-.342-.571-.457-1.029-.457-.457 0-.8.229-1.028.572-.229.228-.343.571-.343 1.143v1.828c0 .572.114.914.343 1.143.228.343.571.457 1.028.457.458 0 .8-.228 1.029-.571.229-.115.343-.572.343-1.143zm-.914.228c0 .458-.115.686-.458.686-.342 0-.457-.228-.457-.686V3.2c0-.457.115-.686.457-.686.343 0 .458.229.458.686v2.171zm4.342 1.486V1.714h-.914V5.6c-.228.343-.343.457-.571.457a.246.246 0 0 1-.229-.228V1.714h-.914v4c0 .343 0 .572.114.8 0 .229.229.343.572.343.342 0 .685-.228 1.028-.571v.571h.914zM13.029 12c-.343 0-.458.229-.458.686v.457h.915v-.457c0-.457-.115-.686-.457-.686zM9.714 12c-.114 0-.343.114-.457.229v3.085c.114.115.343.229.457.229.229 0 .343-.229.343-.686v-2.171c0-.457-.114-.686-.343-.686z">
+                                </path>
+                                <path
+                                    d="M15.314 9.486C15.086 8.686 14.4 8 13.714 8 11.886 7.771 9.943 7.771 8 7.771c-1.943 0-3.771 0-5.714.229-.686 0-1.372.686-1.6 1.486-.229 1.143-.229 2.4-.229 3.543 0 1.142 0 2.4.229 3.542.228.8.8 1.372 1.6 1.486 1.943.229 3.771.229 5.714.229 1.943 0 3.771 0 5.714-.229.8-.114 1.486-.686 1.6-1.486.229-1.142.229-2.4.229-3.542 0-1.143 0-2.4-.229-3.543zM4.8 10.514H3.657v5.829H2.63v-5.829H1.6V9.486h3.2v1.028zm2.743 5.829h-.914v-.572c-.343.458-.686.572-1.029.572-.343 0-.457-.114-.571-.343 0-.114-.115-.343-.115-.8v-4h.915v4c0 .114.114.229.228.229.229 0 .343-.115.572-.458V11.2h.914v5.143zm3.428-1.6c0 .457 0 .8-.114 1.028-.114.343-.343.572-.686.572-.342 0-.685-.229-.914-.572v.458h-.914V9.486h.914v2.171c.343-.343.572-.571.914-.571.343 0 .572.228.686.571.114.229.114.572.114 1.029v2.057zm3.429-.8h-1.829v.914c0 .457.115.686.458.686.228 0 .342-.114.457-.343v-.571h.914V15.314c0 .229-.114.343-.229.572-.228.343-.571.571-1.142.571-.458 0-.8-.228-1.143-.571-.229-.229-.343-.686-.343-1.143v-1.714c0-.572.114-.915.228-1.143.229-.343.572-.572 1.143-.572.457 0 .8.229 1.029.572.228.228.228.685.228 1.143v.914h.229z">
+                                </path>
+                            </g>
+                        </svg></a>
+                    <a href="https://instagram.com/poltekucm?igshid=YmMyMTA2M2Y="><svg
+                            xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                            class="fill-white cursor-pointer hover:fill-slate-500 w-8 lg:w-7 mt-2" viewBox="0 0 48 48">
+                            <path
+                                d="M 16.5 5 C 10.16639 5 5 10.16639 5 16.5 L 5 31.5 C 5 37.832757 10.166209 43 16.5 43 L 31.5 43 C 37.832938 43 43 37.832938 43 31.5 L 43 16.5 C 43 10.166209 37.832757 5 31.5 5 L 16.5 5 z M 16.5 8 L 31.5 8 C 36.211243 8 40 11.787791 40 16.5 L 40 31.5 C 40 36.211062 36.211062 40 31.5 40 L 16.5 40 C 11.787791 40 8 36.211243 8 31.5 L 8 16.5 C 8 11.78761 11.78761 8 16.5 8 z M 34 12 C 32.895 12 32 12.895 32 14 C 32 15.105 32.895 16 34 16 C 35.105 16 36 15.105 36 14 C 36 12.895 35.105 12 34 12 z M 24 14 C 18.495178 14 14 18.495178 14 24 C 14 29.504822 18.495178 34 24 34 C 29.504822 34 34 29.504822 34 24 C 34 18.495178 29.504822 14 24 14 z M 24 17 C 27.883178 17 31 20.116822 31 24 C 31 27.883178 27.883178 31 24 31 C 20.116822 31 17 27.883178 17 24 C 17 20.116822 20.116822 17 24 17 z">
+                            </path>
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+        <p class="uppercase text-gray-500 text-xs text-center my-2 cursor-default">COPYRIGHT © 2022 UNGGULAN CIPTA
+            MANDIRI.<span class="hidden lg:inline"> ALL RIGHTS RESERVED. TERMS OF USE. PRIVACY STATEMENT.<span></p>
+    </footer>
+</body>
+
+</html>
