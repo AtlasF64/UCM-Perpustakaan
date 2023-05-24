@@ -8,6 +8,7 @@ class DashboardController extends Controller
 {
     public function Dashboard()
     {
+        // $user = Member::join('users','users.id','=','member.id')->where('status_akun','!=','0')->orderby('name','ASC')->get();
         return view('dashboard');
     }
 
@@ -16,5 +17,9 @@ class DashboardController extends Controller
     {
         $user = Member::join('users','users.id','=','member.id')->where('status_akun','!=','0')->orderby('name','ASC')->get();
         return view('admin.informasiuser',compact('user'));
+
+
+        
+        
     }
 }

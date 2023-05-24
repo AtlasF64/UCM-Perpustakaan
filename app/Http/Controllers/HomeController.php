@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Peminjaman;
+use App\Buku;
+use App\User;
+use App\Pengembalian;
 class HomeController extends Controller
 {
+
+    // THIS CONTROLLER IS NOT SUPPORTED.
     /**
      * Create a new controller instance.
      *
@@ -27,4 +32,5 @@ class HomeController extends Controller
         return view('home');
         
     }
+    
 }

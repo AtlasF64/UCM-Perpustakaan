@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,11 @@ Route::get('/ucmlibrary', 'UCMLibraryController@ucmlibrary');
 // IF you log in as a user and it direct u to the wrong page, go to RouteServiceProvider.php
 //  public const HOME = '/'; set to that.
 Route::get('/', 'UCMLibraryController@ucmlibrary');
+
+
+// Route::get('/clear-cache', function(){
+// 	$run = Artisan::call('config:clear');
+// 	$run = Artisan::call('cache:clear');
+// 	$run = Artisan::call('config:cache');
+// 	return "FINISHED";
+// })

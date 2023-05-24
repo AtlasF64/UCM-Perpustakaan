@@ -22,7 +22,11 @@ class UCMLibraryController extends Controller
             $member = User::where('status_akun','!=','0')->count();
             $peminjaman = Peminjaman::count();
             $pengembalian = Pengembalian::count();
-            return view('admin.home',compact('kategori','buku','member','peminjaman','pengembalian'));
+
+            $datapeminjaman = Peminjaman::select('peminjaman.*','peminjaman.id_peminjaman as id_peminjaman2','pengembalian.*','member.*','users.*')->leftJoin('pengembalian','pengembalian.id_peminjaman','=','peminjaman.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->orderby('peminjaman.id_peminjaman','DESC')->get();
+            $datapengembalian = Pengembalian::join('peminjaman','peminjaman.id_peminjaman','=','pengembalian.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->orderby('id_pengembalian','DESC')->get();
+
+            return view('admin.home',compact('kategori','buku','member','peminjaman','pengembalian','datapeminjaman','datapengembalian'));
         }
         else
         {

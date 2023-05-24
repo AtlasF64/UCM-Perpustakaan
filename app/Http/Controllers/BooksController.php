@@ -44,8 +44,16 @@ class BooksController extends Controller
         $simpan->tahun = $request->get('tahun');
         $simpan->kota = $request->get('kota');
         $fotocoverbuku = 'fotocover' . date('YmdHis') . '.' . $request->file('fotocoverbuku')->getClientOriginalExtension();
-        $request->file('fotocoverbuku')->move('img/fotocoverbuku',$fotocoverbuku);
-        $simpan->fotocoverbuku = $fotocoverbuku;
+        // $request->file('fotocoverbuku')->move('img/fotocoverbuku',$fotocoverbuku);
+        // $simpan->fotocoverbuku = $fotocoverbuku;
+        if($request->hasFile('fotocoverbuku'))
+        {
+            $request->file('fotocoverbuku')->move('img/fotocoverbuku',$fotocoverbuku);
+            $simpan->fotocoverbuku = $fotocoverbuku;
+        }
+        else {
+            $simpan->fotocoverbuku = null;
+        }
         $simpan->status_buku = '0';
         $simpan->status_kategori = $request->get('status_kategori'); 
         $simpan->save();
@@ -96,7 +104,7 @@ class BooksController extends Controller
         if($cek == 0)
         {
             $delete = Buku::findOrFail($id);
-            unlink(public_path() . '/img/fotocoverbuku/' . $delete->fotocoverbuku);
+            // unlink(public_path() . '/img/fotocoverbuku/' . $delete->fotocoverbuku);
             $delete->delete();
             return redirect('databuku')->with('message_success', 'Data Buku Berhasil Dihapus');  
         }

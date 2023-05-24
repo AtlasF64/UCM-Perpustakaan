@@ -9,7 +9,7 @@ class KategoriBookController extends Controller
 {
     public function index()
     {
-    	$datakategoribuku = KategoriBuku::orderby('id_kategoribuku','DESC')->get();
+    	$datakategoribuku = KategoriBuku::orderby('id_kategoribuku','ASC')->get();
     	return view('admin.datakategoribuku.index',compact('datakategoribuku'));
     }
 

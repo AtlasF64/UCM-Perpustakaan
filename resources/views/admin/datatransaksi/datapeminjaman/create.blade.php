@@ -20,14 +20,10 @@
 				<label id="id_buku" class="col-md-4 control-label">Pilih Buku <font style="color:red">*</font></label>
 				<div class="col-md-6">
 					<select id="id_buku" name="id_buku" class="form-control" required="required">
-						<option value=null selected disabled hidden>Pilih Buku</option>
-						@if(isset($_GET['id_buku']))
+						<option value="" selected disabled hidden>Pilih Buku</option>
 						@foreach($databuku as $key => $value)
-						<option value="{{$value->id_buku}}" <?php if($value->id_buku == $_GET['id_buku']) echo 'selected'?>>Kode: {{$value->kodebuku}}, Judul:  {{$value->judulbuku}}, Author: {{$value->author}}, Tahun: {{$value->tahun}}</option>
+						<option value="{{$value->id_buku}}" <?php if(isset($_GET['id_buku']) == $value->id_buku) echo 'selected'?>>Kode: {{$value->kodebuku}}, Judul:  {{$value->judulbuku}}, Author: {{$value->author}}, Tahun: {{$value->tahun}}</option>
 						@endforeach
-						@else
-						<option value="{{$value->id_buku}}">Kode: {{$value->kodebuku}}, Judul:  {{$value->judulbuku}}, Author: {{$value->author}}, Tahun: {{$value->tahun}}</option>
-						@endif
 					</select>
 				</div>
 			</div>
