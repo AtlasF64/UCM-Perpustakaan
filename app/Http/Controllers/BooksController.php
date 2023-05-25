@@ -43,11 +43,12 @@ class BooksController extends Controller
         $simpan->publisher = $request->get('publisher');
         $simpan->tahun = $request->get('tahun');
         $simpan->kota = $request->get('kota');
-        $fotocoverbuku = 'fotocover' . date('YmdHis') . '.' . $request->file('fotocoverbuku')->getClientOriginalExtension();
+        
         // $request->file('fotocoverbuku')->move('img/fotocoverbuku',$fotocoverbuku);
         // $simpan->fotocoverbuku = $fotocoverbuku;
         if($request->hasFile('fotocoverbuku'))
         {
+            $fotocoverbuku = 'fotocover' . date('YmdHis') . '.' . $request->file('fotocoverbuku')->getClientOriginalExtension();
             $request->file('fotocoverbuku')->move('img/fotocoverbuku',$fotocoverbuku);
             $simpan->fotocoverbuku = $fotocoverbuku;
         }

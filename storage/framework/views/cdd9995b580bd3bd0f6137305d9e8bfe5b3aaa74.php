@@ -161,8 +161,17 @@
                 <main>
                     <?php echo $__env->yieldContent('content'); ?>
                 </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Jeffry- 20010030010 - 2023</div>
+                            
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
+        
         
         
 

@@ -23,7 +23,7 @@
             
 
             <div class="card-body">
-                <table class="table">
+                <table id="example" class="table table-striped">
                     <thead>
                         <tr>
                             <th style="width:30px">No</th>

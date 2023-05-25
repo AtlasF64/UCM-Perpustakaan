@@ -165,8 +165,21 @@
                 <main>
                     @yield('content')
                 </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Jeffry- 20010030010 - 2023</div>
+                            {{-- <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div> --}}
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
+        
         {{-- <script src="{{ asset('bootstrap-3.3.7-dist/googleapis/jquery.min.js') }}"></script>
     <script src="{{ asset('bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>

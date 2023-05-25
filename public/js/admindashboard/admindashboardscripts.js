@@ -9,6 +9,11 @@
 $(document).ready(function () {
     $('#example').DataTable();
 });
+
+$(document).ready(function(){
+    $('table').dataTable();
+});
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
