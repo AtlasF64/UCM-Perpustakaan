@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('/databuku', 'BooksController');
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::resource('/datakategoribuku', 'KategoriBookController');
+	Route::resource('/datagenrebuku', 'GenreBookController');
+	Route::resource('/datarakbuku', 'RakBukuController');
 	Route::resource('/datatransaksi', 'TransaksiController');
 	Route::resource('/datatransaksi/datapeminjaman', 'PeminjamanController');
 	Route::resource('/datatransaksi/datapengembalian', 'PengembalianController');

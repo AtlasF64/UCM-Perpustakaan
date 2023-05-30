@@ -8,16 +8,18 @@
                 <a href="<?php echo e(url('databuku')); ?>/create" type="button" class="btn btn-primary" style="float: right">Tambah
                     Buku</a>
             </div>
-            <?php if(Session::has('message_success')): ?>
-            <div class="message-success">
-                <?php echo Session::get('message_success'); ?>
+            <div>
+                <?php if(Session::has('message_success')): ?>
+                <div class="message-success" style="margin: 1rem; float:left;">
+                    <?php echo Session::get('message_success'); ?>
+                </div>
+                <?php endif;?>
+                <?php if(Session::has('message_failed')): ?>
+                <div class="message-failed" style="margin: 1rem; float:left;">
+                    <?php echo Session::get('message_failed'); ?>
+                </div>
+                <?php endif;?>
             </div>
-            <?php endif;?>
-            <?php if(Session::has('message_failed')): ?>
-            <div class="message-failed">
-                <?php echo Session::get('message_failed'); ?>
-            </div>
-            <?php endif;?>
             
 
             <div class="card-body">
@@ -111,7 +113,8 @@
                                 </td>
                                 <td>
                                     <!-- Button trigger modal -->
-                                    <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo e($value->id_buku); ?>">
+                                    <a type="button" class="btn" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal<?php echo e($value->id_buku); ?>">
                                         <i class="fa fa-trash"></i>
                                     </a>
 

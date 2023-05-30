@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\GenreBuku;
+use App\Buku;
 use Illuminate\Http\Request;
 
 class GenreBookController extends Controller

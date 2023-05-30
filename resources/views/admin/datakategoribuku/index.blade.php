@@ -10,16 +10,18 @@
                 <a href="{{ url('datakategoribuku') }}/create" type="button" class="btn btn-primary"
                     style="float: right">Tambah Kategori Buku</a>
             </div>
+            <div>
             <?php if(Session::has('message_success')): ?>
-            <div class="message-success">
+            <div class="message-success" style="margin: 1rem; float:left;">
                 <?php echo Session::get('message_success'); ?>
             </div>
             <?php endif;?>
             <?php if(Session::has('message_failed')): ?>
-            <div class="message-failed">
+            <div class="message-failed" style="margin: 1rem; float:left;">
                 <?php echo Session::get('message_failed'); ?>
             </div>
             <?php endif;?>
+            </div>
             {{-- <button type="button" href="{{ url('databuku') }}/create" class="btn btn-primary">Tambah Data</button> --}}
 
             <div class="card-body">

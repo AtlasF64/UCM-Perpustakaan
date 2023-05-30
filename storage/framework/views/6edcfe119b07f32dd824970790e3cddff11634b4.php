@@ -17,16 +17,38 @@
 			<div class="form-group">
 				<label id="kodebuku" class="col-md-4 control-label">Kode Buku <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<input type="text" id="kodebuku" class="form-control" name="kodebuku" maxlength="12" value="<?php echo e(old('kodebuku')); ?>" required/>
+					<input type="text" id="kodebuku" class="form-control" name="kodebuku" maxlength="12" required value="<?php echo e(old('kodebuku')); ?>"/>
 				</div>
 			</div>
 			<div class="form-group">
 				<label id="kategoribuku" class="col-md-4 control-label">Kategori Buku <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<select id="kategoribuku" name="kategoribuku" class="form-control" required="required">
+					<select id="kategoribuku" name="kategoribuku" class="form-control" required>
 						<option value="" selected disabled hidden>Pilih Kategori</option>
 						<?php $__currentLoopData = $datakategoribuku; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 						<option value="<?php echo e($value->id_kategoribuku); ?>"><?php echo e($value->kategoribuku); ?></option>
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label id="genrebuku" class="col-md-4 control-label">Genre Buku <font style="color:red">*</font></label>
+				<div class="col-md-6">
+					<select id="genrebuku" name="genrebuku" class="form-control" required>
+						<option value="" selected disabled hidden>Pilih Genre</option>
+						<?php $__currentLoopData = $datagenrebuku; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+						<option value="<?php echo e($value->id_genrebuku); ?>"><?php echo e($value->genrebuku); ?></option>
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label id="rakbuku" class="col-md-4 control-label">Rak Buku <font style="color:red">*</font></label>
+				<div class="col-md-6">
+					<select id="rakbuku" name="rakbuku" class="form-control">
+						<option value="" selected disabled hidden required="required">Pilih Rak</option>
+						<?php $__currentLoopData = $datarakbuku; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+						<option value="<?php echo e($value->id_rakbuku); ?>"><?php echo e($value->rakbuku); ?></option>
 						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					</select>
 				</div>
@@ -40,25 +62,25 @@
 			<div class="form-group">
 				<label id="author" class="col-md-4 control-label">Author <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<textarea id="author" class="form-control" name="author" required><?php echo e(old('author')); ?></textarea>
+					<textarea required id="author" class="form-control" name="author"><?php echo e(old('author')); ?></textarea>
 				</div>
 			</div>
 			<div class="form-group">
 				<label id="publisher" class="col-md-4 control-label">Publisher <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<textarea id="publisher" class="form-control" name="publisher" required><?php echo e(old('publisher')); ?></textarea>
+					<textarea required id="publisher" class="form-control" name="publisher" ><?php echo e(old('publisher')); ?></textarea>
 				</div>
 			</div>
 			<div class="form-group">
 				<label id="kota" class="col-md-4 control-label">Kota <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<input type="text" id="kota" class="form-control" name="kota" maxlength="30" value="<?php echo e(old('kota')); ?>" required/>
+					<input required type="text" id="kota" class="form-control" name="kota" maxlength="30" value="<?php echo e(old('kota')); ?>"/>
 				</div>
 			</div>
 			<div class="form-group">
 				<label id="tahun" class="col-md-4 control-label">Tahun <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<select id="tahun" name="tahun" class="form-control" required="required">
+					<select required id="tahun" name="tahun" class="form-control">
 						<option value="" selected disabled hidden>Pilih Tahun</option>
 						<?php for($i=date('Y');$i>=1950;$i--): ?>
 						<option value="<?php echo e($i); ?>"><?php echo e($i); ?></option>
@@ -67,7 +89,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label id="fotocoverbuku" class="col-md-4 control-label">Upload Foto Cover Buku <font style="color:red">*</font></label>
+				<label id="fotocoverbuku" class="col-md-4 control-label">Upload Foto Cover Buku (optional)</label>
 				<div class="col-md-6">
 					<input type="file" id="fotocoverbuku" class="form-control" name="fotocoverbuku" accept=".jpg,.png,.jpeg"/>
 				</div>
@@ -79,6 +101,16 @@
 						<option value="" selected disabled hidden>Pilih Status Kategori Buku</option>
 						<option value="0">Mahasiswa</option>
 						<option value="1">Dosen</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label id="status_kategori" class="col-md-4 control-label">Status Aktif <font style="color:red">*</font></label>
+				<div class="col-md-6">
+					<select id="status_kategori" name="status_kategori" class="form-control" required="required">
+						<option value="" selected disabled hidden>Pilih Status Buku Baru</option>
+						<option value="0">Tampil sebagai Buku Baru</option>
+						<option value="1">Tidak Tampil</option>
 					</select>
 				</div>
 			</div>

@@ -68,7 +68,7 @@
 				<div class="col-md-6">
 					<textarea id="catatan" name="catatan" class="form-control" placeholder="Catatan/Keterangan Pengembalian"></textarea>
 				</div>
-			</div>\
+			</div>
 			<div class="form-group">
 				<div class="col-md-6 col-md-offset-4">
 					<button type="submit" class="btn btn-primary" style="width:100%">

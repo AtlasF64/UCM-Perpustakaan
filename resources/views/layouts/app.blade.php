@@ -15,7 +15,8 @@
             integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <link href="{{ asset('css/admindashboard.css') }}" rel="stylesheet" />
         {{-- <link href="{{ asset('js/admindashboard/datatable/datatables.css') }}" rel="stylesheet" /> --}}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 
         {{-- script --}}
@@ -24,20 +25,21 @@
         <script defer src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
         <script defer src="{{ asset('js/admindashboard/admindashboardscripts.js') }}"></script>
 
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
-        </script>
-        
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+        {{-- <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+        </script> --}}
+
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         {{-- <script defer src="{{ asset('assets/demo/chart-area-demo.js') }}"></script>
         <script defer src="{{ asset('assets/demo/chart-bar-demo.js') }}"></script> --}}
         <script defer src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
             crossorigin="anonymous"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-        </script>
+
         {{-- <script defer src="js/datatables-simple-demo.js"></script> --}}
         <script defer src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <script defer src="https://kit.fontawesome.com/a2d76b74d9.js" crossorigin="anonymous"></script>
-        
+
 
 
     </head>
@@ -45,21 +47,23 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="{{ url('/') }}">Start Bootstrap</a>
+            <a class="navbar-brand ps-3 m-3" href="{{ url('/') }}">
+                <img src="{{asset('img/fotowebsite/logoucm.png')}}" style="max-width: 70%;" />
+            </a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                     class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            {{-- <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
                         aria-describedby="btnNavbarSearch" />
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
                             class="fas fa-search"></i></button>
                 </div>
-            </form>
+            </form> --}}
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <ul class="navbar-nav ms-auto me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
@@ -86,12 +90,13 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <div class="sb-sidenav-menu-heading">Beranda</div>
                             <a class="nav-link" href="{{ url('/') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Overview
+                                Beranda
                             </a>
-                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            {{-- Data Buku --}}
+                            <div class="sb-sidenav-menu-heading">Data</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                                 data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -103,15 +108,35 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ url('databuku') }}">Buku</a>
                                     <a class="nav-link" href="{{ url('datakategoribuku') }}">Kategori Buku</a>
+                                    <a class="nav-link" href="{{ url('datagenrebuku') }}">Genre Buku</a>
+                                    <a class="nav-link" href="{{ url('datarakbuku') }}">Rak Buku</a>
                                 </nav>
                             </div>
+                            {{--  --}}
+                            {{-- Data Master --}}
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                                data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
+                                data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Master Data
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne"
+                                data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ url('informasiuser') }}">Informasi User</a>
+
+                                </nav>
+                            </div>
+                            {{--  --}}
+
+
+                            {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Master Data
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a> --}}
+                            {{-- <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
                                 data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
@@ -143,8 +168,8 @@
                                         </nav>
                                     </div>
                                 </nav>
-                            </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            </div> --}}
+                            <div class="sb-sidenav-menu-heading">Transaksi</div>
                             {{-- <a class="nav-link" href="charts.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Charts
@@ -157,7 +182,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        {{ Auth::user()->name}}
                     </div>
                 </nav>
             </div>
@@ -168,7 +193,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Jeffry- 20010030010 - 2023</div>
+                            <div class="text-muted">Copyright &copy; Jeffry - 20010030010 - 2023</div>
                             {{-- <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
@@ -179,12 +204,12 @@
                 </footer>
             </div>
         </div>
-        
+
         {{-- <script src="{{ asset('bootstrap-3.3.7-dist/googleapis/jquery.min.js') }}"></script>
     <script src="{{ asset('bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     @yield('datatable') --}}
-        
+
 
     </body>
 

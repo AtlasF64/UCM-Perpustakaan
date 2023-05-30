@@ -12,7 +12,7 @@
             </div>
         </div>
     </form>
-    <div class="row" style="padding:30px;clear:both">
+    <div class="row" style="padding:30px;clear:both"> 
         @foreach($databuku as $key => $value)
         @include('include.kotakbukudua')
         @endforeach  

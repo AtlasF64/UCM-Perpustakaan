@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Buku;
 use App\KategoriBuku;
+use App\GenreBuku;
+use App\RakBuku;
 use App\Peminjaman;
 
 class BooksController extends Controller
@@ -24,19 +26,25 @@ class BooksController extends Controller
     public function create()
     {
         $datakategoribuku = KategoriBuku::orderby('kategoribuku','ASC')->get();
-        return view('admin.databuku.create',compact('datakategoribuku'));
+        $datagenrebuku = GenreBuku::orderby('genrebuku','ASC')->get();
+        $datarakbuku = RakBuku::orderby('rakbuku','ASC')->get();
+        return view('admin.databuku.create',compact('datakategoribuku','datagenrebuku','datarakbuku'));
     }
 
     public function show($id)
     {
         $value = Buku::join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->find($id);
-        return view('admin.databuku.view',compact('value'));
+        $valuegenre = Buku::join('genrebuku','genrebuku.id_genrebuku','=','buku.id_genrebuku')->find($id);
+        $valuerak = Buku::join('rakbuku','rakbuku.id_rakbuku','=','buku.id_rakbuku')->find($id);
+        return view('admin.databuku.view',compact('value','valuegenre','valuerak'));
     }
 
     public function store(Request $request)
     {
         $simpan = new Buku;
         $simpan->id_kategoribuku = $request->get('kategoribuku');
+        $simpan->id_genrebuku = $request->get('genrebuku');
+        $simpan->id_rakbuku = $request->get('rakbuku');
         $simpan->kodebuku = $request->get('kodebuku');
         $simpan->judulbuku = $request->get('judulbuku');
         $simpan->author = $request->get('author');
@@ -66,12 +74,14 @@ class BooksController extends Controller
         $databuku = Buku::find($id);
         if($databuku->status_buku == '1')
         {
-            return redirect('databuku/create')->with('message_failed', 'Maaf, Edit Tidak Bisa Dilakukan Dikarenakan Buku Sedang Dalam Status Dipinjam');
+            return redirect('databuku/')->with('message_failed', 'Maaf, Edit Tidak Bisa Dilakukan Dikarenakan Buku Sedang Dalam Status Dipinjam');
         }
         else
         {
             $datakategoribuku = KategoriBuku::orderby('kategoribuku','ASC')->get();
-            return view('admin.databuku.edit',compact('databuku','datakategoribuku'));
+            $datagenrebuku = GenreBuku::orderby('genrebuku','ASC')->get();
+            $datarakbuku = RakBuku::orderby('rakbuku','ASC')->get();
+            return view('admin.databuku.edit',compact('databuku','datakategoribuku','datagenrebuku','datarakbuku'));
         }
        
         // return view('admin.databuku.edit',compact());
@@ -81,6 +91,9 @@ class BooksController extends Controller
     public function update($id,Request $request)
     {
         $simpan = Buku::find($id);
+        $simpan->id_kategoribuku = $request->get('kategoribuku');
+        $simpan->id_genrebuku = $request->get('genrebuku');
+        $simpan->id_rakbuku = $request->get('rakbuku');
         $simpan->kodebuku = $request->get('kodebuku');
         $simpan->judulbuku = $request->get('judulbuku');
         $simpan->author = $request->get('author');

@@ -12,7 +12,7 @@
             </div>
         </div>
     </form>
-    <div class="row" style="padding:30px;clear:both">
+    <div class="row" style="padding:30px;clear:both"> 
         <?php $__currentLoopData = $databuku; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <?php echo $__env->make('include.kotakbukudua', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  

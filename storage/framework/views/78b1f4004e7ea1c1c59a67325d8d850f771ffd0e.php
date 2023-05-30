@@ -14,37 +14,37 @@
                         role="tab" aria-controls="profile" aria-selected="false">Data Pengembalian</button>
                 </li>
                 
-				<li class="nav-item">
-					
-				</li>
+                <li class="nav-item">
+
+                </li>
             </ul>
 
 
             <div class="tab-content" id="myTabContent">
                 <div style="margin-left: 50px; float:left;">
-					<?php if(Session::has('message_success')): ?>
-					<div class="message-success" style="margin:-20px;margin-top:20px;margin-bottom:20px">
-						<?php echo Session::get('message_success'); ?>
-					</div>
-					<?php endif;?>
-					<?php if(Session::has('message_failed')): ?>
-					<div class="message-failed" style="margin:-20px;margin-top:20px;margin-bottom:20px">
-						<?php echo Session::get('message_failed'); ?>
-					</div>
-					<?php endif;?>
-				</div>
+                    <?php if(Session::has('message_success')): ?>
+                    <div class="message-success" style="margin:-20px;margin-top:20px;margin-bottom:20px">
+                        <?php echo Session::get('message_success'); ?>
+                    </div>
+                    <?php endif;?>
+                    <?php if(Session::has('message_failed')): ?>
+                    <div class="message-failed" style="margin:-20px;margin-top:20px;margin-bottom:20px">
+                        <?php echo Session::get('message_failed'); ?>
+                    </div>
+                    <?php endif;?>
+                </div>
                 
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-					
+
                     <a href="<?php echo e(url('datatransaksi/datapeminjaman')); ?>/create" class="btn btn-primary"
                         style="float: right; margin-right: 1rem; margin-top: 1rem; margin-top: 1rem;">Tambah Data
                         Peminjaman</a>
-					
+
                     <br>
                     <br>
 
                     <div class="card-body">
-						
+
                         <table id="example" class="table table-striped" style="width:100%">
                             <thead>
                                 <tr>
@@ -137,7 +137,7 @@
                 </div>
                 
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <div style="margin: 10px">
+                    <div>
                         <div>
                             <a href="<?php echo e(url('datatransaksi/datapengembalian')); ?>/create" class="btn btn-primary"
                                 style="float: right; margin-right: 1rem; margin-top: 1rem; margin-top: 1rem;">Tambah Data
@@ -146,8 +146,9 @@
                         <br>
                         <br>
                         <div class="card-body">
+
                             <table id="example" class="table table-striped" style="width:100%">
-                                <thead class="warnaawal">
+                                <thead>
                                     <tr>
                                         <th style="width:30px">No</th>
                                         <th>Kode Pengembalian</th>
@@ -200,8 +201,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus
-                                                                    Data
-                                                                    Buku
+                                                                    Data Buku
                                                                 </h1>
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>

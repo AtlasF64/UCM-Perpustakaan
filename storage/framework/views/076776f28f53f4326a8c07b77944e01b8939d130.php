@@ -37,7 +37,30 @@
                         </select>
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <label id="genrebuku" class="col-md-4 control-label">Genre Buku <font style="color:red">*</font>
+                        </label>
+                    <div class="col-md-6">
+                        <select id="genrebuku" name="genrebuku" class="form-control">
+                            <option value="<?php echo e($databuku->genrebuku); ?>" selected></option>
+                            <?php $__currentLoopData = $datagenrebuku; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($value->id_genrebuku); ?>" <?php if($value->id_genrebuku == $databuku->id_genrebuku) echo 'selected';?>><?php echo e($value->genrebuku); ?></option> 
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label id="rakbuku" class="col-md-4 control-label">Rak Buku <font style="color:red">*</font>
+                        </label>
+                    <div class="col-md-6">
+                        <select id="rakbuku" name="rakbuku" class="form-control">
+                            <option value="<?php echo e($databuku->rakbuku); ?>" selected></option>
+                            <?php $__currentLoopData = $datarakbuku; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($value->id_rakbuku); ?>" <?php if($value->id_rakbuku == $databuku->id_rakbuku) echo 'selected';?>><?php echo e($value->rakbuku); ?></option> 
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label id="judulbuku" class="col-md-4 control-label">Judul Buku <font style="color:red">*</font></label>
                     <div class="col-md-6">

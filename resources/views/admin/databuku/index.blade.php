@@ -10,16 +10,18 @@
                 <a href="{{ url('databuku') }}/create" type="button" class="btn btn-primary" style="float: right">Tambah
                     Buku</a>
             </div>
-            <?php if(Session::has('message_success')): ?>
-            <div class="message-success">
-                <?php echo Session::get('message_success'); ?>
+            <div>
+                <?php if(Session::has('message_success')): ?>
+                <div class="message-success" style="margin: 1rem; float:left;">
+                    <?php echo Session::get('message_success'); ?>
+                </div>
+                <?php endif;?>
+                <?php if(Session::has('message_failed')): ?>
+                <div class="message-failed" style="margin: 1rem; float:left;">
+                    <?php echo Session::get('message_failed'); ?>
+                </div>
+                <?php endif;?>
             </div>
-            <?php endif;?>
-            <?php if(Session::has('message_failed')): ?>
-            <div class="message-failed">
-                <?php echo Session::get('message_failed'); ?>
-            </div>
-            <?php endif;?>
             {{-- <button type="button" href="{{ url('databuku') }}/create" class="btn btn-primary">Tambah Data</button> --}}
 
             <div class="card-body">
@@ -123,13 +125,14 @@
                                 </td>
                                 <td>
                                     <!-- Button trigger modal -->
-                                    <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal{{$value->id_buku}}">
+                                    <a type="button" class="btn" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal{{ $value->id_buku }}">
                                         <i class="fa fa-trash"></i>
                                     </a>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal{{$value->id_buku}}" tabindex="-1"
-                                        aria-labelledby="exampleModalLabel{{$value->id_buku}}" aria-hidden="true">
+                                    <div class="modal fade" id="exampleModal{{ $value->id_buku }}" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel{{ $value->id_buku }}" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">

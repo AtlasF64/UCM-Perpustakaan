@@ -7,4 +7,5 @@ use Illuminate\Http\Request;
 class UCMLibraryBooklistController extends Controller
 {
     //
+    // DEPRECATED
 }

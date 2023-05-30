@@ -8,12 +8,20 @@
 				<div class="preview col-md-4">
 					<div class="preview-pic tab-content">
 					  	<div class="tab-pane active" id="pic-1">
-					  		<img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="img-responsive"/>
+							<?php if($value === true): ?>
+							<img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="img-responsive"/>
+							<?php else: ?>
+							<img src="<?php echo e(asset('img/fotocoverbuku/default.png')); ?>" class="img-responsive"/>
+							<?php endif; ?>
+					  		
 					  	</div>
 					</div>
 				</div>
 				<div class="details col-md-8">
 					<h3 class="product-title"><b><?php echo e($value->judulbuku); ?></b></h3>
+					<h4><b>Genre Buku:</b> <?php echo e($valuegenre->genrebuku); ?></h4>
+					<h4><b>Kategori:</b> <?php echo e($value->kategoribuku); ?></h4>
+					<h4><b>Rak:</b> <?php echo e($valuerak->rakbuku); ?></h4>
 					<h4><b>Kode Buku:</b> <?php echo e($value->kodebuku); ?></h4>
 					<h4><b>Status:</b> <?php echo $__env->make('include/statuspeminjaman', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?></h4>
 					<h4><b>Pengarang:</b> <?php echo e($value->author); ?></h4>

@@ -1,21 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="padding:20px;padding-top:75px">
-	<h2 class="tengah">Informasi Member</h2>
-	<?php if(Session::has('message_success')): ?>
-    <div class="message-success" style="margin:4px">
-       	<?php echo Session::get('message_success')?>
-    </div>
-    <?php endif;?>
-    <?php if(Session::has('message_failed')): ?>
-    <div class="message-failed" style="margin:4px">
-        <?php echo Session::get('message_failed')?>
-    </div>
-    <?php endif;?>
-	<div class="row" style="margin: 0px">
-		<table id="datatableboots" class="table table-bordered" style="margin-top:10px;width:100%">
-	        <thead class="warnaawal">
+<div class="container-fluid px-4">
+	<h2 class="mt-4">Informasi Member</h2>
+	<div class="card mb-6">
+		<div class="card-header">
+			<i class="fas fa-table me-1"></i>
+			Data User
+			{{-- <a href="{{ url('datarakbuku') }}/create" type="button" class="btn btn-primary"
+				style="float: right">Tambah User</a> --}}
+		</div>
+		<div>
+			<?php if(Session::has('message_success')): ?>
+			<div class="message-success" style="margin: 1rem; float:left;">
+				<?php echo Session::get('message_success'); ?>
+			</div>
+			<?php endif;?>
+			<?php if(Session::has('message_failed')): ?>
+			<div class="message-failed" style="margin: 1rem; float:left;">
+				<?php echo Session::get('message_failed'); ?>
+			</div>
+			<?php endif;?>
+		</div>
+	<div class="card-body">
+		<table id="example" class="table table-striped">
+	        <thead>
 	            <tr>
 	              	<th style="width:30px">No</th>
 	              	<th>Kode Member</th>

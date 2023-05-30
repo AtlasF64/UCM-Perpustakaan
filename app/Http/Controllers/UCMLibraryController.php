@@ -38,7 +38,7 @@ class UCMLibraryController extends Controller
     public function informasiuser()
     {
         $user = Member::join('users','users.id','=','member.id')->where('status_akun','!=','0')->orderby('name','ASC')->get();
-        return view('admin.informasiuser',compact('user'));
+        return view('admin.informasiuser.informasiuser',compact('user'));
     }
 
     public function pengaturanakun()
@@ -65,7 +65,7 @@ class UCMLibraryController extends Controller
     public function informasiuseredit($id_member)
     {
         $user = Member::join('users','users.id','=','member.id')->where('status_akun','!=','0')->find($id_member);
-        return view('admin.informasiuseredit',compact('user'));
+        return view('admin.informasiuser.informasiuseredit',compact('user'));
     }
 
     public function postinformasiuseredit($id_member,Request $request)

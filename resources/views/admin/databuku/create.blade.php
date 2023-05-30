@@ -19,16 +19,38 @@
 			<div class="form-group">
 				<label id="kodebuku" class="col-md-4 control-label">Kode Buku <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<input type="text" id="kodebuku" class="form-control" name="kodebuku" maxlength="12" value="{{old('kodebuku')}}" required/>
+					<input type="text" id="kodebuku" class="form-control" name="kodebuku" maxlength="12" required value="{{old('kodebuku')}}"/>
 				</div>
 			</div>
 			<div class="form-group">
 				<label id="kategoribuku" class="col-md-4 control-label">Kategori Buku <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<select id="kategoribuku" name="kategoribuku" class="form-control" required="required">
+					<select id="kategoribuku" name="kategoribuku" class="form-control" required>
 						<option value="" selected disabled hidden>Pilih Kategori</option>
 						@foreach($datakategoribuku as $key => $value)
 						<option value="{{$value->id_kategoribuku}}">{{$value->kategoribuku}}</option>
+						@endforeach
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label id="genrebuku" class="col-md-4 control-label">Genre Buku <font style="color:red">*</font></label>
+				<div class="col-md-6">
+					<select id="genrebuku" name="genrebuku" class="form-control" required>
+						<option value="" selected disabled hidden>Pilih Genre</option>
+						@foreach($datagenrebuku as $key => $value)
+						<option value="{{$value->id_genrebuku}}">{{$value->genrebuku}}</option>
+						@endforeach
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label id="rakbuku" class="col-md-4 control-label">Rak Buku <font style="color:red">*</font></label>
+				<div class="col-md-6">
+					<select id="rakbuku" name="rakbuku" class="form-control">
+						<option value="" selected disabled hidden required="required">Pilih Rak</option>
+						@foreach($datarakbuku as $key => $value)
+						<option value="{{$value->id_rakbuku}}">{{$value->rakbuku}}</option>
 						@endforeach
 					</select>
 				</div>
@@ -42,25 +64,25 @@
 			<div class="form-group">
 				<label id="author" class="col-md-4 control-label">Author <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<textarea id="author" class="form-control" name="author" required>{{ old('author') }}</textarea>
+					<textarea required id="author" class="form-control" name="author">{{ old('author') }}</textarea>
 				</div>
 			</div>
 			<div class="form-group">
 				<label id="publisher" class="col-md-4 control-label">Publisher <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<textarea id="publisher" class="form-control" name="publisher" required>{{ old('publisher') }}</textarea>
+					<textarea required id="publisher" class="form-control" name="publisher" >{{ old('publisher') }}</textarea>
 				</div>
 			</div>
 			<div class="form-group">
 				<label id="kota" class="col-md-4 control-label">Kota <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<input type="text" id="kota" class="form-control" name="kota" maxlength="30" value="{{old('kota')}}" required/>
+					<input required type="text" id="kota" class="form-control" name="kota" maxlength="30" value="{{old('kota')}}"/>
 				</div>
 			</div>
 			<div class="form-group">
 				<label id="tahun" class="col-md-4 control-label">Tahun <font style="color:red">*</font></label>
 				<div class="col-md-6">
-					<select id="tahun" name="tahun" class="form-control" required="required">
+					<select required id="tahun" name="tahun" class="form-control">
 						<option value="" selected disabled hidden>Pilih Tahun</option>
 						@for($i=date('Y');$i>=1950;$i--)
 						<option value="{{$i}}">{{$i}}</option>
@@ -69,7 +91,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label id="fotocoverbuku" class="col-md-4 control-label">Upload Foto Cover Buku <font style="color:red">*</font></label>
+				<label id="fotocoverbuku" class="col-md-4 control-label">Upload Foto Cover Buku (optional)</label>
 				<div class="col-md-6">
 					<input type="file" id="fotocoverbuku" class="form-control" name="fotocoverbuku" accept=".jpg,.png,.jpeg"/>
 				</div>
@@ -81,6 +103,16 @@
 						<option value="" selected disabled hidden>Pilih Status Kategori Buku</option>
 						<option value="0">Mahasiswa</option>
 						<option value="1">Dosen</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label id="status_kategori" class="col-md-4 control-label">Status Aktif <font style="color:red">*</font></label>
+				<div class="col-md-6">
+					<select id="status_kategori" name="status_kategori" class="form-control" required="required">
+						<option value="" selected disabled hidden>Pilih Status Buku Baru</option>
+						<option value="0">Tampil sebagai Buku Baru</option>
+						<option value="1">Tidak Tampil</option>
 					</select>
 				</div>
 			</div>

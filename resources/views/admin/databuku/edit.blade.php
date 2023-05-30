@@ -39,7 +39,30 @@
                         </select>
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <label id="genrebuku" class="col-md-4 control-label">Genre Buku <font style="color:red">*</font>
+                        </label>
+                    <div class="col-md-6">
+                        <select id="genrebuku" name="genrebuku" class="form-control">
+                            <option value="{{ $databuku->genrebuku }}" selected></option>
+                            @foreach ($datagenrebuku as $key => $value)
+                                <option value="{{ $value->id_genrebuku }}" <?php if($value->id_genrebuku == $databuku->id_genrebuku) echo 'selected';?>>{{ $value->genrebuku }}</option> 
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label id="rakbuku" class="col-md-4 control-label">Rak Buku <font style="color:red">*</font>
+                        </label>
+                    <div class="col-md-6">
+                        <select id="rakbuku" name="rakbuku" class="form-control">
+                            <option value="{{ $databuku->rakbuku }}" selected></option>
+                            @foreach ($datarakbuku as $key => $value)
+                                <option value="{{ $value->id_rakbuku }}" <?php if($value->id_rakbuku == $databuku->id_rakbuku) echo 'selected';?>>{{ $value->rakbuku }}</option> 
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label id="judulbuku" class="col-md-4 control-label">Judul Buku <font style="color:red">*</font></label>
                     <div class="col-md-6">

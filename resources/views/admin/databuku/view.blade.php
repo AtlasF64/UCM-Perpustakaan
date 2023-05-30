@@ -8,12 +8,20 @@
 				<div class="preview col-md-4">
 					<div class="preview-pic tab-content">
 					  	<div class="tab-pane active" id="pic-1">
-					  		<img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive"/>
+							@if ($value === true)
+							<img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive"/>
+							@else
+							<img src="{{asset('img/fotocoverbuku/default.png')}}" class="img-responsive"/>
+							@endif
+					  		
 					  	</div>
 					</div>
 				</div>
 				<div class="details col-md-8">
 					<h3 class="product-title"><b>{{$value->judulbuku}}</b></h3>
+					<h4><b>Genre Buku:</b> {{$valuegenre->genrebuku}}</h4>
+					<h4><b>Kategori:</b> {{$value->kategoribuku}}</h4>
+					<h4><b>Rak:</b> {{$valuerak->rakbuku}}</h4>
 					<h4><b>Kode Buku:</b> {{$value->kodebuku}}</h4>
 					<h4><b>Status:</b> @include('include/statuspeminjaman')</h4>
 					<h4><b>Pengarang:</b> {{$value->author}}</h4>
