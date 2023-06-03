@@ -17,7 +17,8 @@ class PeminjamanController extends Controller
 
     public function index()
     {
-        
+        $datapeminjaman = Peminjaman::select('peminjaman.*','peminjaman.id_peminjaman as id_peminjaman2','pengembalian.*','member.*','users.*')->leftJoin('pengembalian','pengembalian.id_peminjaman','=','peminjaman.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->orderby('peminjaman.id_peminjaman','DESC')->get();
+        return view('admin.datatransaksi.datapeminjaman.index',compact('datapeminjaman'));
     }
 
     public function create()
@@ -29,8 +30,8 @@ class PeminjamanController extends Controller
 
     public function show($id)
     {
-        $value = Peminjaman::select('peminjaman.*','peminjaman.id_peminjaman as id_peminjaman2','pengembalian.*','member.*','users.*','buku.*','kategoribuku.*')->leftJoin('pengembalian','pengembalian.id_peminjaman','=','peminjaman.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->join('buku','buku.id_buku','=','peminjaman.id_buku')->join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->find($id);
-        return view('admin.datatransaksi.datapeminjaman.view',compact('value'));
+        // $value = Peminjaman::select('peminjaman.*','peminjaman.id_peminjaman as id_peminjaman2','pengembalian.*','member.*','users.*','buku.*','kategoribuku.*')->leftJoin('pengembalian','pengembalian.id_peminjaman','=','peminjaman.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->join('buku','buku.id_buku','=','peminjaman.id_buku')->join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->find($id);
+        // return view('admin.datatransaksi.datapeminjaman.view',compact('value'));
     }
 
     public function store(Request $request)
@@ -54,7 +55,7 @@ class PeminjamanController extends Controller
             $simpan2->status_buku = '1';
             $simpan2->save();
 
-            return redirect('datatransaksi/datapeminjaman/create')->with('message_success', 'Data Peminjaman Berhasil Ditambahkan'); 
+            return redirect('datapeminjaman')->with('message_success', 'Data Peminjaman Berhasil Ditambahkan'); 
         }
         
     }
@@ -80,11 +81,11 @@ class PeminjamanController extends Controller
             $delete2->status_buku = "0";
             $delete2->save();
             $delete->delete();
-            return redirect('datatransaksi')->with('message_success', 'Data Peminjaman Berhasil Dihapus');
+            return redirect('datapeminjaman')->with('message_success', 'Data Peminjaman Berhasil Dihapus');
         }
         else
         {
-             return redirect('datatransaksi')->with('message_failed', 'Data Peminjaman Tidak Dapat Dihapus Karena Sudah Memiliki Data Pengembalian dan Dianggap Selesai');
+             return redirect('datapeminjaman')->with('message_failed', 'Data Peminjaman Tidak Dapat Dihapus Karena Sudah Memiliki Data Pengembalian dan Dianggap Selesai');
         }
         
     }

@@ -1,25 +1,29 @@
 <?php $__env->startSection('content'); ?>
-<div class="content">
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">UCM LIBRARY</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Pusat Informasi Ketersediaan Buku di Perpustakaan UCM</p>
-                <form action="<?php echo e(url('books')); ?>">
-                    <div class="input-group mb-3 mt-5">
-                       
-                        <input type="text" class="form-control" placeholder="Membangun Aplikasi dengan Android Flutter" name="judul"
-                            aria-describedby="basic-addon2" required="required">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">UCM LIBRARY</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Pusat Informasi Ketersediaan Buku di Perpustakaan UCM</p>
+                    <form action="<?php echo e(url('books')); ?>">
+                        <div class="input-group mb-3 mt-5">
+                           
+                            <input type="text" class="form-control mx-2" placeholder="Membangun Aplikasi dengan Android Flutter" name="judul"
+                                aria-describedby="basic-addon2" required="required">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary text-white" type="submit">Search</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </header>
-</div>
- <section class="py-5">
+    </div>
+</header>
+ <section class="py-5" style="background-color: ">
     <center>
         <h2><b>Kumpulan Buku Terbaru</b></h2>
     </center>

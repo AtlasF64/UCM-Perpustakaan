@@ -7,6 +7,9 @@
             <div class="col-4"  style="float:left">
                 <input type="text" name="judul" class="form-control" placeholder="Masukkan Judul Buku" value="{{$_GET['judul']}}">
             </div>
+            {{-- <div class="col-4"  style="float:left">
+                <input type="text" name="genre" class="form-control" placeholder="Masukkan Genre Buku" value="{{$_GET['genre']}}">
+            </div> --}}
             <div class="col-3" style="float:left">
                 <button type="submit" class="btn btn-primary" style="width:100%">CARI</button>
             </div>

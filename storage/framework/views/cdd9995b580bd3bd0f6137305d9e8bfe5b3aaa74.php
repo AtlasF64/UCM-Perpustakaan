@@ -8,38 +8,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>Dashboard - UCM Perpustakaan</title>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.bootstrap5.min.css">
+
+        <!-- Script -->
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.bootstrap5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+        <script src="<?php echo e(asset('js/admindashboard/adm-datatable-script.js')); ?>"></script>
+        
+
         
         
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <link href="<?php echo e(asset('css/admindashboard.css')); ?>" rel="stylesheet" />
         
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 
         
-        <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script defer src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-        <script defer src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-        <script defer src="<?php echo e(asset('js/admindashboard/admindashboardscripts.js')); ?>"></script>
-
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             crossorigin="anonymous"></script>
-        
-
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        
-        <script defer src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-            crossorigin="anonymous"></script>
-
-        
         <script defer src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <script defer src="https://kit.fontawesome.com/a2d76b74d9.js" crossorigin="anonymous"></script>
+        <script src="<?php echo e(asset('js/admindashboard/admindashboardscripts.js')); ?>"></script>
+        
+        
+        
+        
 
-
-
+        
+        
+         
+         <style>
+            .dataTables_length{
+                margin-bottom: 20px;
+            }
+            .dt-buttons{
+                display: flexbox;
+            }
+        </style>
     </head>
 
     <body class="sb-nav-fixed">
@@ -59,8 +78,8 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><a class="dropdown-item" href="<?php echo e(url('pengaturanakun')); ?>">Pengaturan Akun</a></li>
+                        
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
@@ -99,7 +118,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="<?php echo e(url('databuku')); ?>">Buku</a>
                                     <a class="nav-link" href="<?php echo e(url('datakategoribuku')); ?>">Kategori Buku</a>
-                                    <a class="nav-link" href="<?php echo e(url('datagenrebuku')); ?>">Genre Buku</a>
+                                    
                                     <a class="nav-link" href="<?php echo e(url('datarakbuku')); ?>">Rak Buku</a>
                                 </nav>
                             </div>
@@ -125,10 +144,26 @@
                             
                             <div class="sb-sidenav-menu-heading">Transaksi</div>
                             
-                            <a class="nav-link" href="<?php echo e(url('datatransaksi')); ?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                data-bs-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Data Transaksi
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
+                            <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne"
+                                data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<?php echo e(url('datapeminjaman')); ?>">Data Peminjaman</a>
+                                </nav>
+                            </div>
+                            <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne"
+                                data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<?php echo e(url('datapengembalian')); ?>">Data Pengembalian</a>
+                                </nav>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

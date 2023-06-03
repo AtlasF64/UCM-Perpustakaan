@@ -41,16 +41,36 @@
                                 <td><?php echo $i; ?></td>
                                 <td>{{ $value->kategoribuku }}</td>
 
-                                <td style="text-align:right">
-                                    <a href="{{ url('datakategoribuku') }}/{{ $value->id_kategoribuku }}/edit"
-                                        style="color:green"><i class="fa fa-edit"></i></a>
+                                <td style="text-align: right">
+                                    <div class="dropdown">
+                                        <i class="btn fa-solid fa-ellipsis dropdown-toggle" data-bs-toggle="dropdown"
+                                            href="#exampleModalToggle" role="button" aria-expanded="false"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                    href="{{ url('datakategoribuku') }}/{{ $value->id_kategoribuku }}"><i class="fa fa-eye"></i> View Detail
+                                                </a>
+                                            </li>
+                                            <li><a class="dropdown-item"
+                                                    href="{{ url('datakategoribuku') }}/{{ $value->id_kategoribuku }}/edit"><i class="fa fa-edit"></i> Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal{{ $value->id_kategoribuku }}"><i class="fa fa-trash"></i> Delete
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {{-- <a href="{{ url('datakategoribuku') }}/{{ $value->id_kategoribuku }}/edit"
+                                        style="color:green"><i class="fa fa-edit"></i></a> --}}
                                 </td>
                                 <td>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal{{ $value->id_kategoribuku }}">
                                         <i class="fa fa-trash"></i>
-                                    </button>
+                                    </button> --}}
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal{{ $value->id_kategoribuku }}" tabindex="-1"

@@ -26,9 +26,11 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('/datakategoribuku', 'KategoriBookController');
 	Route::resource('/datagenrebuku', 'GenreBookController');
 	Route::resource('/datarakbuku', 'RakBukuController');
-	Route::resource('/datatransaksi', 'TransaksiController');
-	Route::resource('/datatransaksi/datapeminjaman', 'PeminjamanController');
-	Route::resource('/datatransaksi/datapengembalian', 'PengembalianController');
+	// Route::resource('/datatransaksi', 'TransaksiController');
+	// Route::resource('/datatransaksi/datapeminjaman', 'PeminjamanController');
+	// Route::resource('/datatransaksi/datapengembalian', 'PengembalianController');
+	Route::resource('/datapeminjaman', 'PeminjamanController');
+	Route::resource('/datapengembalian', 'PengembalianController');
 	Route::get('/informasiuser', 'UCMLibraryController@informasiuser')->name('informasiuser');
 	Route::get('/informasiuser/{id_member}/edit', 'UCMLibraryController@informasiuseredit')->name('informasiuseredit');
 	Route::post('/informasiuser/{id_member}/edit', 'UCMLibraryController@postinformasiuseredit')->name('postinformasiuseredit');

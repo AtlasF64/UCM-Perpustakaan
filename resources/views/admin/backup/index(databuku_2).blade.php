@@ -38,6 +38,8 @@
                             <th>Status Buku</th>
                             <th></th>
                             <th></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,44 +55,69 @@
                                 <td>@include('include/statuskategori')</td>
                                 <td>@include('include/statuspeminjaman')</td>
                                 <td>
+                                    {{-- tooltip --}}
+                                    <div class="modal fade" id="exampleModalToggle" aria-hidden="true"
+                                        aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {{-- Show a second modal and hide this one with the button below. --}}
 
 
-                                    <div class="dropdown">
-                                        <i class="btn fa-solid fa-ellipsis dropdown-toggle" data-bs-toggle="dropdown"
-                                            href="#exampleModalToggle" role="button" aria-expanded="false"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item"
-                                                    href="{{ url('databuku') }}/{{ $value->id_buku }}"><i class="fa fa-eye"></i> View Detail
-                                                </a>
-                                            </li>
-                                            <li><a class="dropdown-item"
-                                                    href="{{ url('databuku') }}/{{ $value->id_buku }}/edit"><i class="fa fa-edit"></i> Edit
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a type="button" class="dropdown-item" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{ $value->id_buku }}"><i class="fa fa-trash"></i> Delete
-                                                </a>
-                                            </li>
-                                        </ul>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                                                        data-bs-toggle="modal" data-bs-dismiss="modal">Open second
+                                                        modal</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                                        aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Hide this modal and show the first with the button below.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle"
+                                                        data-bs-toggle="modal" data-bs-dismiss="modal">Back to
+                                                        first</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <i class="btn fa-solid fa-ellipsis" data-bs-toggle="modal" href="#exampleModalToggle"
+                                        role="button"></i>
+                                    
 
                                 </td>
-                                {{-- <td style="text-align:right">
+                                <td style="text-align:right">
                                     <a href="{{ url('databuku') }}/{{ $value->id_buku }}" style="color:skyblue"
                                         target="_blank"><i class="fa fa-eye"></i></a>
                                 </td>
                                 <td style="text-align:right">
                                     <a href="{{ url('databuku') }}/{{ $value->id_buku }}/edit" style="color:green"><i
                                             class="fa fa-edit"></i></a>
-                                </td> --}}
+                                </td>
                                 <td>
                                     <!-- Button trigger modal -->
-                                    {{-- <a type="button" class="btn" data-bs-toggle="modal"
+                                    <a type="button" class="btn" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal{{ $value->id_buku }}">
                                         <i class="fa fa-trash"></i>
-                                    </a> --}}
+                                    </a>
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal{{ $value->id_buku }}" tabindex="-1"

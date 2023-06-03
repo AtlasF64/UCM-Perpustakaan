@@ -139,14 +139,15 @@
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div>
                         <div>
-                            <a href="<?php echo e(url('datatransaksi/datapengembalian')); ?>/create" class="btn btn-primary"
-                                style="float: right; margin-right: 1rem; margin-top: 1rem; margin-top: 1rem;">Tambah Data
+                            <a href="<?php echo e(url('datatransaksi/datapengembalian')); ?>/create"
+                                class="btn btn-primary"style="float: right; margin-right: 1rem; margin-top: 1rem; margin-top: 1rem;">Tambah
+                                Data
                                 Pengembalian</a>
                         </div>
                         <br>
                         <br>
                         <div class="card-body">
-
+                           
                             <table id="example" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
@@ -159,7 +160,7 @@
                                         <th>Catatan</th>
                                         <th></th>
                                         <th></th>
-                                        <th></th>
+
                                     </tr>
                                 </thead>
                                 <tbody>

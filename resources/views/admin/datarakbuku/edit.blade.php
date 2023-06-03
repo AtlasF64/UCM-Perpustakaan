@@ -33,7 +33,7 @@
 			<div class="form-group">
 				<div class="col-md-6 col-md-offset-4">
 					<a href="{{url('datarakbuku')}}" class="btn btn-primary" style="width:100%;background-color:red">
-						KEMBALI KE DATA KATEGORI BUKU
+						KEMBALI KE DATA RAK BUKU
 					</a>
 				</div>
 			</div>

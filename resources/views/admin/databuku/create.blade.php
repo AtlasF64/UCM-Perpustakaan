@@ -33,7 +33,7 @@
 					</select>
 				</div>
 			</div>
-			<div class="form-group">
+			{{-- <div class="form-group">
 				<label id="genrebuku" class="col-md-4 control-label">Genre Buku <font style="color:red">*</font></label>
 				<div class="col-md-6">
 					<select id="genrebuku" name="genrebuku" class="form-control" required>
@@ -43,7 +43,7 @@
 						@endforeach
 					</select>
 				</div>
-			</div>
+			</div> --}}
 			<div class="form-group">
 				<label id="rakbuku" class="col-md-4 control-label">Rak Buku <font style="color:red">*</font></label>
 				<div class="col-md-6">
@@ -106,7 +106,7 @@
 					</select>
 				</div>
 			</div>
-			<div class="form-group">
+			{{-- <div class="form-group">
 				<label id="status_kategori" class="col-md-4 control-label">Status Aktif <font style="color:red">*</font></label>
 				<div class="col-md-6">
 					<select id="status_kategori" name="status_kategori" class="form-control" required="required">
@@ -115,7 +115,7 @@
 						<option value="1">Tidak Tampil</option>
 					</select>
 				</div>
-			</div>
+			</div> --}}
 			<div class="form-group">
 				<div class="col-md-6 col-md-offset-4">
 					<button type="submit" class="btn btn-primary" style="width:100%">

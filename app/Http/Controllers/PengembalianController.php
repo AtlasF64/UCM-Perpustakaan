@@ -16,7 +16,8 @@ class PengembalianController extends Controller
 
     public function index()
     {
-        
+        $datapengembalian = Pengembalian::join('peminjaman','peminjaman.id_peminjaman','=','pengembalian.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->orderby('id_pengembalian','DESC')->get();
+        return view('admin.datatransaksi.datapengembalian.index',compact('datapengembalian'));
     }
 
     public function create()
@@ -45,7 +46,7 @@ class PengembalianController extends Controller
         $simpan2->status_buku = '0';
         $simpan2->save();
 
-        return redirect('datatransaksi/datapengembalian/create')->with('message_success', 'Data Pengembalian Berhasil Ditambahkan'); 
+        return redirect('datapengembalian')->with('message_success', 'Data Pengembalian Berhasil Ditambahkan'); 
     }
 
     public function edit($id)
@@ -66,6 +67,6 @@ class PengembalianController extends Controller
         $delete2->status_buku = "1";
         $delete2->save();
         $delete->delete();
-        return redirect('datatransaksi')->with('message_success', 'Data Pengembalian Berhasil Dihapus');
+        return redirect('datapengembalian')->with('message_success', 'Data Pengembalian Berhasil Dihapus');
     }
 }

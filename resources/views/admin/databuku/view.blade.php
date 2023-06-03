@@ -19,7 +19,7 @@
 				</div>
 				<div class="details col-md-8">
 					<h3 class="product-title"><b>{{$value->judulbuku}}</b></h3>
-					<h4><b>Genre Buku:</b> {{$valuegenre->genrebuku}}</h4>
+					{{-- <h4><b>Genre Buku:</b> {{$valuegenre->genrebuku}}</h4> --}}
 					<h4><b>Kategori:</b> {{$value->kategoribuku}}</h4>
 					<h4><b>Rak:</b> {{$valuerak->rakbuku}}</h4>
 					<h4><b>Kode Buku:</b> {{$value->kodebuku}}</h4>

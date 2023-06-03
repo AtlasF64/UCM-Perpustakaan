@@ -14,7 +14,7 @@
     </div>
     <?php endif;?>
 	<div class="row">
-		<form class="form-horizontal" enctype="multipart/form-data" style="padding:20px" role="form" method="POST" action="<?php echo e(url('datatransaksi/datapeminjaman')); ?>">
+		<form class="form-horizontal" enctype="multipart/form-data" style="padding:20px" role="form" method="POST" action="<?php echo e(url('datapeminjaman')); ?>">
 			<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
 			<div class="form-group">
 				<label id="id_buku" class="col-md-4 control-label">Pilih Buku <font style="color:red">*</font></label>
@@ -60,7 +60,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-md-6 col-md-offset-4">
-					<a href="<?php echo e(url('datatransaksi')); ?>" class="btn btn-primary" style="width:100%;background-color:red">
+					<a href="<?php echo e(url('datapeminjaman')); ?>" class="btn btn-primary" style="width:100%;background-color:red">
 						KEMBALI KE DATA TRANSAKSI
 					</a>
 				</div>

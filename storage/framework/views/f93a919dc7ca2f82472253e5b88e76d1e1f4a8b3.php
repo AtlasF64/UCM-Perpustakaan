@@ -39,16 +39,32 @@
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo e($value->genrebuku); ?></td>
 
-                                <td style="text-align:right">
-                                    <a href="<?php echo e(url('datagenrebuku')); ?>/<?php echo e($value->id_genrebuku); ?>/edit"
-                                        style="color:green"><i class="fa fa-edit"></i></a>
+                                <td style="text-align: right">
+                                    <div class="dropdown">
+                                        <i class="btn fa-solid fa-ellipsis dropdown-toggle" data-bs-toggle="dropdown"
+                                            href="#exampleModalToggle" role="button" aria-expanded="false"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                    href="<?php echo e(url('datagenrebuku')); ?>/<?php echo e($value->id_genrebuku); ?>"><i class="fa fa-eye"></i> View Detail
+                                                </a>
+                                            </li>
+                                            <li><a class="dropdown-item"
+                                                    href="<?php echo e(url('datagenrebuku')); ?>/<?php echo e($value->id_genrebuku); ?>/edit"><i class="fa fa-edit"></i> Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal<?php echo e($value->id_genrebuku); ?>"><i class="fa fa-trash"></i> Delete
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
                                 </td>
                                 <td>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal<?php echo e($value->id_genrebuku); ?>">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
+                                    
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal<?php echo e($value->id_genrebuku); ?>" tabindex="-1"

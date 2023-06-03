@@ -19,7 +19,7 @@
 				</div>
 				<div class="details col-md-8">
 					<h3 class="product-title"><b><?php echo e($value->judulbuku); ?></b></h3>
-					<h4><b>Genre Buku:</b> <?php echo e($valuegenre->genrebuku); ?></h4>
+					
 					<h4><b>Kategori:</b> <?php echo e($value->kategoribuku); ?></h4>
 					<h4><b>Rak:</b> <?php echo e($valuerak->rakbuku); ?></h4>
 					<h4><b>Kode Buku:</b> <?php echo e($value->kodebuku); ?></h4>

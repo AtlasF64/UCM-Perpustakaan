@@ -31,7 +31,7 @@ class UCMLibraryController extends Controller
         else
         {
             $newbook = Buku::orderby('tahun','DESC')->take(9)->get();
-            return view('ucmlibrary.ucmlibrary',compact('newbook'));
+            return view('ucmlibrary.ucmlibrary',compact('newbook',));
         }
     }
 
@@ -87,6 +87,5 @@ class UCMLibraryController extends Controller
         $member->save();
         return redirect('informasiuser/' . $id_member . '/edit')->with('message_success', 'Perubahan Informasi Member Berhasil Dilakukan');
     }
-
     
 }

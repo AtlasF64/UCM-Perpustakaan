@@ -10,7 +10,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }} <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -23,7 +23,7 @@
                                 @enderror
                             </div>
                         </div>
-                         <div class="form-group row">
+                         <div class="form-group row mb-2">
                             <label for="nimnidnnip" class="col-md-4 col-form-label text-md-right">{{ __('NIM/NIDN/NIP') }} <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -36,7 +36,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="nomortelepon" class="col-md-4 col-form-label text-md-right">{{ __('Nomor HP') }} <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -49,7 +49,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="alamat" class="col-md-4 col-form-label text-md-right">{{ __('Alamat') }} <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -62,7 +62,7 @@
                                 @enderror
                             </div>
                         </div>
-                         <div class="form-group row">
+                         <div class="form-group row mb-2">
                             <label for="keterangan" class="col-md-4 col-form-label text-md-right">{{ __('Status Keanggotaan') }} <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -81,7 +81,7 @@
                         </div>
 
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Alamat Email') }} <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -95,7 +95,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }} <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -109,7 +109,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }} <font style="color:red">*</font></label>
 
                             <div class="col-md-6">

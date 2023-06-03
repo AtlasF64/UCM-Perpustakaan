@@ -1,7 +1,7 @@
 @if($value->status_buku == 0)
-Tersedia
+<a style="color: #4CBB17">Tersedia</a>
 @elseif($value->status_buku == 1)
-Sedang Dipinjam
+<a style="color: #fbc336">Sedang Dipinjam</a>
 @elseif($value->status_buku == 2)
-Tidak Tersedia
+<a style="color: red">Tidak Tersedia</a>
 @endif

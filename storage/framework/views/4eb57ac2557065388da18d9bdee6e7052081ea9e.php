@@ -9,7 +9,7 @@
                     <form method="POST" action="<?php echo e(route('register')); ?>">
                         <?php echo csrf_field(); ?>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="name" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Name')); ?> <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -36,7 +36,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-                         <div class="form-group row">
+                         <div class="form-group row mb-2">
                             <label for="nimnidnnip" class="col-md-4 col-form-label text-md-right"><?php echo e(__('NIM/NIDN/NIP')); ?> <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -63,7 +63,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="nomortelepon" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Nomor HP')); ?> <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -90,7 +90,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="alamat" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Alamat')); ?> <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -117,7 +117,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-                         <div class="form-group row">
+                         <div class="form-group row mb-2">
                             <label for="keterangan" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Status Keanggotaan')); ?> <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -150,7 +150,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="email" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Alamat Email')); ?> <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -178,7 +178,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="password" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Password')); ?> <font style="color:red">*</font></label>
 
                             <div class="col-md-6">
@@ -206,7 +206,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row mb-2">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Confirm Password')); ?> <font style="color:red">*</font></label>
 
                             <div class="col-md-6">

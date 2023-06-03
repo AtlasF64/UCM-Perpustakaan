@@ -39,7 +39,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label id="genrebuku" class="col-md-4 control-label">Genre Buku <font style="color:red">*</font>
                         </label>
                     <div class="col-md-6">
@@ -50,7 +50,7 @@
                             @endforeach
                         </select>
                     </div>
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <label id="rakbuku" class="col-md-4 control-label">Rak Buku <font style="color:red">*</font>
                         </label>
