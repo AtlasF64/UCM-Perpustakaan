@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
+
 @section('content')
+<script src="{{ asset('js/selectize.min.js') }}"></script>
 <div class="container" style="padding:20px;padding-top:75px">
 	<h2 class="tengah">Tambah Data Buku</h2>
 	<?php if(Session::has('message_success')): ?>
@@ -93,6 +95,9 @@
 			<div class="form-group">
 				<label id="fotocoverbuku" class="col-md-4 control-label">Upload Foto Cover Buku (optional)</label>
 				<div class="col-md-6">
+					
+					<img src="{{asset('img/fotocoverbuku/default.png')}}" class="img-responsive"/>
+					
 					<input type="file" id="fotocoverbuku" class="form-control" name="fotocoverbuku" accept=".jpg,.png,.jpeg"/>
 				</div>
 			</div>
@@ -117,14 +122,14 @@
 				</div>
 			</div> --}}
 			<div class="form-group">
-				<div class="col-md-6 col-md-offset-4">
+				<div class="col-md-6 col-md-offset-4 mt-2">
 					<button type="submit" class="btn btn-primary" style="width:100%">
 						SUBMIT
 					</button>
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-md-6 col-md-offset-4">
+				<div class="col-md-6 col-md-offset-4 mt-2">
 					<a href="{{url('databuku')}}" class="btn btn-primary" style="width:100%;background-color:red">
 						KEMBALI KE DATA BUKU
 					</a>
@@ -134,7 +139,7 @@
 	</div>
 </div>
 @endsection
-@section('datatable')
+{{-- @section('datatable')
 <script src="{{ asset('js/selectize.min.js') }}"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
@@ -153,4 +158,6 @@
         });
 	});
 </script>
-@endsection
+
+
+@endsection --}}

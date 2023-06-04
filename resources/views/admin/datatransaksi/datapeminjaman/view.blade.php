@@ -23,11 +23,18 @@
 		<h4><b>Jumlah Denda:</b> Rp 0</h4>
 		@else
 		<?php 
+		$denda = 0;
 		$date1 = new DateTime(date("Y-m-d", strtotime("+7 day", strtotime($value->tanggalpeminjaman))));
 		$date2 = new DateTime(date("Y-m-d"));
 		$interval = $date1->diff($date2);
+		if($interval->days * 5000 >35000)
+			$denda = 35000;
+		else
+			$denda = $interval->days * 5000;
+		
 		?>
-		<h4><b>Jumlah Denda:</b> Rp {{number_format($interval->days * 5000),0}}</h4>
+		
+		<h4><b>Jumlah Denda:</b> Rp {{number_format($denda),0}}</h4>
 		@endif
 		<h4><b>Catatan: {{$value->catatan}}</b> 
 		<h4><b>Status Peminjaman:</b> 
@@ -38,7 +45,11 @@
 			<div class="preview col-md-4">
 				<div class="preview-pic tab-content">
 				  	<div class="tab-pane active" id="pic-1">
-				  		<img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive"/>
+						@if ($value === true)
+						<img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive"/>
+						@else
+						<img src="{{asset('img/fotocoverbuku/default.png')}}" class="img-responsive"/>
+						@endif
 				  	</div>
 				</div>
 			</div>
@@ -58,7 +69,7 @@
 		<hr>
 		@if($value->id_pengembalian == null)
 		<h4>Belum Ada Data Pengembalian Untuk Peminjaman Ini</h4>
-		<a href="{{url('datatransaksi/datapengembalian/create?id_peminjaman=')}}{{$value->id_peminjaman2}}" class="btn btn-primary">Tambah Data Pengembalian</a>
+		<a href="{{url('/datapengembalian/create?id_peminjaman=')}}{{$value->id_peminjaman2}}" class="btn btn-primary">Tambah Data Pengembalian</a>
 		@else
 		<h4><b>Kode Pengembalian:</b> {{$value->kode_pengembalian}}</h4>
 		<h4><b>Tanggal Pengembalian:</b> {{date("l, d M Y", strtotime($value->tanggalpengembalian))}}</h4>

@@ -23,13 +23,14 @@
             
 
             <div class="card-body">
-                <table id="example" class="table table-striped" style="width:100%">
+                <table id="example" class="table table-striped">
                     <thead>
                         <tr>
-                            <th style="width:30px">No</th>
+                            <th>No</th>
                             <th>Kode Buku</th>
                             <th>Judul Buku</th>
-                            <th>Author</th>
+                            <th>Kategori Buku</th>
+                            <th >Author</th>
                             <th>Publisher</th>
                             <th>Tahun</th>
                             <th>Status Kategori</th>
@@ -45,6 +46,7 @@
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo e($value->kodebuku); ?></td>
                                 <td><?php echo e($value->judulbuku); ?></td>
+                                <td><?php echo e($value->kategoribuku); ?></td>
                                 <td><?php echo e($value->author); ?></td>
                                 <td><?php echo e($value->publisher); ?></td>
                                 <td><?php echo e($value->tahun); ?></td>

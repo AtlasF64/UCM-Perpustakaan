@@ -31,4 +31,18 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+$(document).ready(function() {
+    $('select').selectize({
 
+        onFocus: function() {
+            category = this.getValue();
+            this.clear(true);
+        },
+        onBlur: function() {
+            if (this.getValue().length == 0 && this.getValue() != category) {
+                this.setValue(category);
+            }
+        }
+
+    });
+});

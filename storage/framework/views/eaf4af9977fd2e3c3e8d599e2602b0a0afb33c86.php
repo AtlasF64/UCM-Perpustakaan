@@ -13,7 +13,7 @@
                                     <span class="count-numbers"><?php echo e($buku); ?></span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="<?php echo e(url('databuku')); ?>">Lihat Detail</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -24,7 +24,7 @@
                                     <span class="count-numbers"><?php echo e($peminjaman); ?></span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="<?php echo e(url('datapeminjaman')); ?>">Lihat Detail</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                                     <span class="count-numbers"><?php echo e($pengembalian); ?></span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="<?php echo e(url('datapengembalian')); ?>">Lihat Detail</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                                     <span class="count-numbers"> <?php echo e($member); ?></span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="<?php echo e(url('informasiuser')); ?>">Lihat Detail</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>

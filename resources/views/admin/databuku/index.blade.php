@@ -25,13 +25,14 @@
             {{-- <button type="button" href="{{ url('databuku') }}/create" class="btn btn-primary">Tambah Data</button> --}}
 
             <div class="card-body">
-                <table id="example" class="table table-striped" style="width:100%">
+                <table id="example" class="table table-striped">
                     <thead>
                         <tr>
-                            <th style="width:30px">No</th>
+                            <th>No</th>
                             <th>Kode Buku</th>
                             <th>Judul Buku</th>
-                            <th>Author</th>
+                            <th>Kategori Buku</th>
+                            <th >Author</th>
                             <th>Publisher</th>
                             <th>Tahun</th>
                             <th>Status Kategori</th>
@@ -47,6 +48,7 @@
                                 <td><?php echo $i; ?></td>
                                 <td>{{ $value->kodebuku }}</td>
                                 <td>{{ $value->judulbuku }}</td>
+                                <td>{{ $value->kategoribuku }}</td>
                                 <td>{{ $value->author }}</td>
                                 <td>{{ $value->publisher }}</td>
                                 <td>{{ $value->tahun }}</td>

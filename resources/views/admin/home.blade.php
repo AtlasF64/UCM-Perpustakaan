@@ -26,7 +26,7 @@
                                     <span class="count-numbers">{{ $buku }}</span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="{{ url('databuku') }}">Lihat Detail</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                                     <span class="count-numbers">{{ $peminjaman }}</span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="{{ url('datapeminjaman') }}">Lihat Detail</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                                     <span class="count-numbers">{{ $pengembalian }}</span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="{{ url('datapengembalian') }}">Lihat Detail</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                     <span class="count-numbers"> {{ $member }}</span>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <a class="small text-white stretched-link" href="{{ url('informasiuser') }}">Lihat Detail</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>

@@ -1,11 +1,12 @@
 <div class="col-md-4" style="margin-top:20px">
-    <div class="card h-100">
+    <div class="card h-100" >
         <!-- Product image-->
-        <?php if($value === true): ?>
-        <img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="card-img-top"/>
-        <?php else: ?>
-        <img src="<?php echo e(asset('img/fotocoverbuku/default.png')); ?>" class="card-img-top"/>
-        <?php endif; ?>
+            <?php if(is_null($value->fotocoverbuku)): ?>
+            <img src="<?php echo e(asset('img/fotocoverbuku/default.png')); ?>" class="img-responsive center"/>
+            <?php else: ?>
+            <img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="img-responsive center"/>
+            <?php endif; ?>
+        
         
         <!-- Product details-->
         <div class="card-body p-4">
@@ -19,6 +20,7 @@
             <h6><b>Kategori:</b> <?php echo e($value->kategoribuku); ?></h6>
             <h6><b>Pengarang:</b> <?php echo e($value->author); ?></h6>
             <h6><b>Tahun:</b> <?php echo e($value->tahun); ?></h6>
+            <h6><b>Status:</b> <?php echo $__env->make('include/statuspeminjaman', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?></h6>
         </div>
         <!-- Product actions-->
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">

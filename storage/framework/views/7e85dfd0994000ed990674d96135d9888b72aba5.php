@@ -3,10 +3,10 @@
 <div class="col mb-5">
     <div class="card h-100">
         <!-- Product image-->
-        <?php if($value === true): ?>
-        <img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="card-img-top"/>
+        <?php if(is_null($value->fotocoverbuku)): ?>
+        <img src="<?php echo e(asset('img/fotocoverbuku/default.png')); ?>" class="img-responsive"/>
         <?php else: ?>
-        <img src="<?php echo e(asset('img/fotocoverbuku/default.png')); ?>" class="card-img-top"/>
+        <img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="img-responsive"/>
         <?php endif; ?>
         
         <!-- Product details-->

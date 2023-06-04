@@ -3,10 +3,10 @@
 <div class="col mb-5">
     <div class="card h-100">
         <!-- Product image-->
-        @if ($value === true)
-        <img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="card-img-top"/>
+        @if (is_null($value->fotocoverbuku))
+        <img src="{{asset('img/fotocoverbuku/default.png')}}" class="img-responsive"/>
         @else
-        <img src="{{asset('img/fotocoverbuku/default.png')}}" class="card-img-top"/>
+        <img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive"/>
         @endif
         {{-- <img class="card-img-top" src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}"
             alt="{{$value->fotocoverbuku}}" /> --}}

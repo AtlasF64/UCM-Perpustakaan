@@ -45,7 +45,8 @@
 
                             <tbody>
                                 <?php $i = 1; ?>
-
+                                
+                                
                                 <?php $__currentLoopData = $datapeminjaman; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <?php if(date('Y-m-d') <= date('Y-m-d', strtotime('+7 day', strtotime($value->tanggalpeminjaman)))): ?>
                                         <tr>
@@ -73,13 +74,10 @@
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item"
-                                                    href="<?php echo e(url('datapeminjaman')); ?>/<?php echo e($value->id_peminjaman); ?>"><i class="fa fa-eye"></i> View Detail
+                                                    href="<?php echo e(url('datapeminjaman')); ?>/<?php echo e($value->id_peminjaman2); ?>"><i class="fa fa-eye"></i> View Detail
                                                 </a>
                                             </li>
-                                            <li><a class="dropdown-item"
-                                                    href="<?php echo e(url('datapeminjaman')); ?>/<?php echo e($value->id_peminjaman2); ?>/edit"><i class="fa fa-edit"></i> Edit
-                                                </a>
-                                            </li>
+                                            
                                             <li>
                                                 <a type="button" class="dropdown-item" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal<?php echo e($value->id_peminjaman2); ?>"><i class="fa fa-trash"></i> Delete

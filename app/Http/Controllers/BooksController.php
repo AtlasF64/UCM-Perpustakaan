@@ -8,6 +8,7 @@ use App\KategoriBuku;
 // use App\GenreBuku;
 use App\RakBuku;
 use App\Peminjaman;
+use Illuminate\Support\Facades\File;
 
 class BooksController extends Controller
 {
@@ -19,7 +20,7 @@ class BooksController extends Controller
 
     public function index()
     {
-        $databuku = Buku::orderby('id_buku','ASC')->get();
+        $databuku = Buku::join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->orderby('id_buku','ASC')->get();
         // $databuku['kategori'] = KategoriBuku::all();
         return view('admin.databuku.index',compact('databuku'));
     }
@@ -52,7 +53,7 @@ class BooksController extends Controller
         $simpan->publisher = $request->get('publisher');
         $simpan->tahun = $request->get('tahun');
         $simpan->kota = $request->get('kota');
-        
+        // $fotocoverbuku = 'fotocover' . date('YmdHis') . '.' . $request->file('fotocoverbuku')->getClientOriginalExtension();
         // $request->file('fotocoverbuku')->move('img/fotocoverbuku',$fotocoverbuku);
         // $simpan->fotocoverbuku = $fotocoverbuku;
         if($request->hasFile('fotocoverbuku'))
@@ -60,6 +61,7 @@ class BooksController extends Controller
             $fotocoverbuku = 'fotocover' . date('YmdHis') . '.' . $request->file('fotocoverbuku')->getClientOriginalExtension();
             $request->file('fotocoverbuku')->move('img/fotocoverbuku',$fotocoverbuku);
             $simpan->fotocoverbuku = $fotocoverbuku;
+            
         }
         else {
             $simpan->fotocoverbuku = null;
@@ -102,13 +104,27 @@ class BooksController extends Controller
         $simpan->tahun = $request->get('tahun');
         $simpan->kota = $request->get('kota');
         if($request->hasFile('fotocoverbuku'))
-        {
+        {   
             $fotocoverbuku = $simpan->fotocoverbuku;
+            if (File::exists($fotocoverbuku)) {
+                File::delete($fotocoverbuku);
+            }
             $request->file('fotocoverbuku')->move('img/fotocoverbuku',$fotocoverbuku);
+            $simpan->fotocoverbuku = $fotocoverbuku;
+            
         }
+        // else {
+        //     $simpan->fotocoverbuku = null;
+        // }
+        // if($request->hasFile('fotocoverbuku'))
+        // {
+            
+        //     $fotocoverbuku = $simpan->fotocoverbuku;
+        //     $request->file('fotocoverbuku')->move('img/fotocoverbuku',$fotocoverbuku);
+        // }
         $simpan->status_kategori = $request->get('status_kategori'); 
         $simpan->status_buku = $request->get('status_buku');
-        $simpan->save();
+        $simpan->update();
         return redirect('databuku/' . $id . '/edit')->with('message_success', 'Data Buku Berhasil Diubah');
 
     }
@@ -135,11 +151,11 @@ class BooksController extends Controller
         // $databuku = Buku::join('genrebuku','genrebuku.id_genrebuku','=','buku.id_genrebuku')->find($request);
         if($request->get('judul') != '')
         {
-            $databuku = Buku::orderby('tahun','ASC')->where('judulbuku', 'like', '%' . $request->get('judul') . '%')->paginate(9);
+            $databuku = Buku::Join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->orderby('tahun','DESC')->where('judulbuku', 'like', '%' . $request->get('judul') . '%')->paginate(9);
         }
         else
         {
-            $databuku = Buku::orderby('tahun','ASC')->paginate(9);
+            $databuku = Buku::Join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->orderby('tahun','DESC')->paginate(9);
         }
         return view('ucmlibrary.books',compact('databuku'));
         
@@ -152,13 +168,13 @@ class BooksController extends Controller
         return view('ucmlibrary.detailbooks',compact('value'));
         
     }
-    public function kotakbuku($id_buku)
-    {
-        $value = Buku::join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->find($id_buku);
+    // public function kotakbuku($id_buku)
+    // {
+    //     $value = Buku::join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->find($id_buku);
 
-        return view('include.kotakbuku',compact('value'));
+    //     return view('include.kotakbuku',compact('value'));
         
-    }
+    // }
    
 
     // public function kotakbuku($id)

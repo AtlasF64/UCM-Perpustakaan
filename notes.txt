@@ -1,0 +1,4 @@
+bikin kategori tampil di ucm perpus
+fix bug catatan pengembalian return null
+bikin checkbox tampil dan tidak tampil utk semua
+tanya soal kepastian: bisa tampil pisah pas bikin pengembalian utk lihat dendany pisah, tanggal pinjam pisah, etc

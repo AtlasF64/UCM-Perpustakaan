@@ -7,13 +7,12 @@
 			<div class="wrapper row">
 				<div class="preview col-md-4">
 					<div class="preview-pic tab-content">
-					  	<div class="tab-pane active" id="pic-1">
-							<?php if($value === true): ?>
-							<img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="img-responsive"/>
-							<?php else: ?>
+					  	<div class="tab-pane active" id="pic-1" >
+							<?php if(is_null($value->fotocoverbuku)): ?>
 							<img src="<?php echo e(asset('img/fotocoverbuku/default.png')); ?>" class="img-responsive"/>
+							<?php else: ?>
+							<img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="img-responsive"/ style="max-width: 80%;">
 							<?php endif; ?>
-					  		
 					  	</div>
 					</div>
 				</div>

@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var table = $('#example').DataTable( {
         lengthChange: true,
-        buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
+        buttons: ['excel', 'pdf', 'colvis' ]
         
     } );
  

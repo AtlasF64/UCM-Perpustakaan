@@ -45,7 +45,8 @@
 
                             <tbody>
                                 <?php $i = 1; ?>
-
+                                {{-- {{$datapeminjaman}} --}}
+                                
                                 @foreach ($datapeminjaman as $key => $value)
                                     @if (date('Y-m-d') <= date('Y-m-d', strtotime('+7 day', strtotime($value->tanggalpeminjaman))))
                                         <tr>
@@ -72,13 +73,13 @@
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item"
-                                                    href="{{ url('datapeminjaman') }}/{{ $value->id_peminjaman }}"><i class="fa fa-eye"></i> View Detail
+                                                    href="{{ url('datapeminjaman') }}/{{ $value->id_peminjaman2 }}"><i class="fa fa-eye"></i> View Detail
                                                 </a>
                                             </li>
-                                            <li><a class="dropdown-item"
+                                            {{-- <li><a class="dropdown-item"
                                                     href="{{ url('datapeminjaman') }}/{{ $value->id_peminjaman2}}/edit"><i class="fa fa-edit"></i> Edit
                                                 </a>
-                                            </li>
+                                            </li> --}}
                                             <li>
                                                 <a type="button" class="dropdown-item" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal{{ $value->id_peminjaman2}}"><i class="fa fa-trash"></i> Delete

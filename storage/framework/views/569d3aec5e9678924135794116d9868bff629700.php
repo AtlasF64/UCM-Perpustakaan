@@ -37,7 +37,7 @@
                                     <th>Kode Peminjaman</th>
                                     <th>Tanggal Pengembalian</th>
                                     <th>Peminjam/Member</th>
-                                    <th>Jumlah Denda Yang Dibayar</th>
+                                    <th>Total Denda</th>
                                     <th>Catatan</th>
                                     <th></th>
                                     <th></th>
@@ -69,10 +69,7 @@
                                                     href="<?php echo e(url('datapengembalian')); ?>/<?php echo e($value->id_pengembalian); ?>"><i class="fa fa-eye"></i> View Detail
                                                 </a>
                                             </li>
-                                            <li><a class="dropdown-item"
-                                                    href="<?php echo e(url('datapengembalian')); ?>/<?php echo e($value->id_pengembalian); ?>/edit"><i class="fa fa-edit"></i> Edit
-                                                </a>
-                                            </li>
+                                            
                                             <li>
                                                 <a type="button" class="dropdown-item" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal<?php echo e($value->id_pengembalian); ?>"><i class="fa fa-trash"></i> Delete

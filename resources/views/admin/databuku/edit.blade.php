@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="{{ asset('js/selectize.min.js') }}"></script>
     <div class="container" style="padding:20px;padding-top:75px">
         <h2 class="tengah">Ubah Data Buku</h2>
         <?php if(Session::has('message_success')): ?>
@@ -87,8 +88,7 @@
                 <div class="form-group">
                     <label id="kota" class="col-md-4 control-label">Kota <font style="color:red">*</font></label>
                     <div class="col-md-6">
-                        <input type="text" id="kota" class="form-control" name="kota" maxlength="30"
-                            value="{{ $databuku->kota }}" required />
+                        <input type="text" id="kota" class="form-control" name="kota" maxlength="30" value="{{ $databuku->kota }}" required />
                     </div>
                 </div>
 
@@ -107,10 +107,13 @@
                 <div class="form-group">
                     <label id="fotocoverbuku" class="col-md-4 control-label">Upload Foto Cover Buku</label>
                     <div class="col-md-6">
-                         <img src="{{asset('img/fotocoverbuku')}}/{{ $databuku->fotocoverbuku }}" style="width:120px" />
-                         <br>
-                        <input type="file" id="fotocoverbuku" class="form-control" name="fotocoverbuku"
-                            accept=".jpg,.png,.jpeg" />
+                        @if ($databuku->fotocoverbuku == true)
+                        <img src="{{asset('img/fotocoverbuku')}}/{{$databuku->fotocoverbuku}}" class="img-responsive"/ style="max-width: 50%;">
+                        @else
+                        <img src="{{asset('img/fotocoverbuku/default.png')}}" class="img-responsive"/ style="max-width: 100%;">
+                        @endif
+                        
+                        <input type="file" id="fotocoverbuku" class="form-control" name="fotocoverbuku" accept=".jpg,.png,.jpeg"/>
                     </div>
                 </div>
 
@@ -131,16 +134,17 @@
                     <label id="status_buku" class="col-md-4 control-label">Status Buku <font
                             style="color:red">*</font></label>
                     <div class="col-md-6">
-                        <select id="status_buku" name="status_kategori" class="form-control" required="required">
+                        <select id="status_buku" name="status_buku" class="form-control" required="required">
                             <option value="" selected disabled hidden>Pilih Status Buku</option>
                             <option value="0" <?php if($databuku->status_buku == "0") echo "selected"?>>Tersedia</option>
                             <option value="2" <?php if($databuku->status_buku == "2") echo "selected"?>>Tidak Tersedia</option>
+                            <option value="3" <?php if($databuku->status_buku == "3") echo "selected"?>>Tidak Tampil</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-6 col-md-offset-4">
+                    <div class="col-md-6 col-md-offset-4 mt-2">
                         <button type="submit" class="btn btn-primary" style="width:100%">
                             SUBMIT
                         </button>
@@ -148,7 +152,7 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-6 col-md-offset-4">
+                    <div class="col-md-6 col-md-offset-4 mt-2">
                         <a href="{{ url('databuku') }}" class="btn btn-primary" style="width:100%;background-color:red">
                             KEMBALI KE DATA BUKU
                         </a>
@@ -158,7 +162,7 @@
         </div>
     </div>
 @endsection
-@section('datatable')
+{{-- @section('datatable')
 <script src="{{ asset('js/selectize.min.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -177,4 +181,4 @@
         });
     });
 </script>
-@endsection
+@endsection --}}

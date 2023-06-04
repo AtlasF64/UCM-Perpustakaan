@@ -36,6 +36,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('/informasiuser/{id_member}/edit', 'UCMLibraryController@postinformasiuseredit')->name('postinformasiuseredit');
 	Route::get('/pengaturanakun', 'UCMLibraryController@pengaturanakun')->name('informasiuser');
 	Route::post('/pengaturanakun', 'UCMLibraryController@postpengaturanakun')->name('postinformasiuser');
+
+	// Route::put('/databuku/edit/{id}',[BooksController::class, 'update']);
+
 });
 
 

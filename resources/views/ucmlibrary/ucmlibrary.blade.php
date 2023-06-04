@@ -104,14 +104,17 @@
         </div>
         {{$newbook}}
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" >
-          <span class="carousel-control-prev-icon" aria-hidden="true" style="color: black"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-    </div>
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="color: black"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+
+
+    
     <!--<center>
         <h2><b>Top 3 Buku Yang Sering Dipinjam</b></h2>
     </center>
@@ -184,4 +187,5 @@
         <a href="{{url('books?judul=')}}" class="btn btn-primary">Lihat Selengkapnya</a>
     </center>
 </section>
+
 @endsection

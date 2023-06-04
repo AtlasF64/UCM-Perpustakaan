@@ -7,13 +7,12 @@
 			<div class="wrapper row">
 				<div class="preview col-md-4">
 					<div class="preview-pic tab-content">
-					  	<div class="tab-pane active" id="pic-1">
-							@if ($value === true)
-							<img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive"/>
-							@else
+					  	<div class="tab-pane active" id="pic-1" >
+							@if (is_null($value->fotocoverbuku))
 							<img src="{{asset('img/fotocoverbuku/default.png')}}" class="img-responsive"/>
+							@else
+							<img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive"/ style="max-width: 80%;">
 							@endif
-					  		
 					  	</div>
 					</div>
 				</div>

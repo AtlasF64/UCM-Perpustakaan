@@ -17,6 +17,7 @@ class PeminjamanController extends Controller
 
     public function index()
     {
+        // $datapeminjaman = Peminjaman::select('peminjaman.*','peminjaman.id_peminjaman as id_peminjaman2','pengembalian.*','member.*','users.*')->leftJoin('pengembalian','pengembalian.id_peminjaman','=','peminjaman.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->orderby('peminjaman.id_peminjaman','DESC')->get();
         $datapeminjaman = Peminjaman::select('peminjaman.*','peminjaman.id_peminjaman as id_peminjaman2','pengembalian.*','member.*','users.*')->leftJoin('pengembalian','pengembalian.id_peminjaman','=','peminjaman.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->orderby('peminjaman.id_peminjaman','DESC')->get();
         return view('admin.datatransaksi.datapeminjaman.index',compact('datapeminjaman'));
     }
@@ -30,8 +31,8 @@ class PeminjamanController extends Controller
 
     public function show($id)
     {
-        // $value = Peminjaman::select('peminjaman.*','peminjaman.id_peminjaman as id_peminjaman2','pengembalian.*','member.*','users.*','buku.*','kategoribuku.*')->leftJoin('pengembalian','pengembalian.id_peminjaman','=','peminjaman.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->join('buku','buku.id_buku','=','peminjaman.id_buku')->join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->find($id);
-        // return view('admin.datatransaksi.datapeminjaman.view',compact('value'));
+        $value = Peminjaman::select('peminjaman.*','peminjaman.id_peminjaman as id_peminjaman2','pengembalian.*','member.*','users.*','buku.*','kategoribuku.*')->leftJoin('pengembalian','pengembalian.id_peminjaman','=','peminjaman.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->join('buku','buku.id_buku','=','peminjaman.id_buku')->join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->find($id);
+        return view('admin.datatransaksi.datapeminjaman.view',compact('value'));
     }
 
     public function store(Request $request)

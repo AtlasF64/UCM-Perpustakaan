@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+<script src="<?php echo e(asset('js/selectize.min.js')); ?>"></script>
 <div class="container" style="padding:20px;padding-top:75px">
 	<h2 class="tengah">Tambah Data Buku</h2>
 	<?php if(Session::has('message_success')): ?>
@@ -81,6 +82,9 @@
 			<div class="form-group">
 				<label id="fotocoverbuku" class="col-md-4 control-label">Upload Foto Cover Buku (optional)</label>
 				<div class="col-md-6">
+					
+					<img src="<?php echo e(asset('img/fotocoverbuku/default.png')); ?>" class="img-responsive"/>
+					
 					<input type="file" id="fotocoverbuku" class="form-control" name="fotocoverbuku" accept=".jpg,.png,.jpeg"/>
 				</div>
 			</div>
@@ -96,14 +100,14 @@
 			</div>
 			
 			<div class="form-group">
-				<div class="col-md-6 col-md-offset-4">
+				<div class="col-md-6 col-md-offset-4 mt-2">
 					<button type="submit" class="btn btn-primary" style="width:100%">
 						SUBMIT
 					</button>
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-md-6 col-md-offset-4">
+				<div class="col-md-6 col-md-offset-4 mt-2">
 					<a href="<?php echo e(url('databuku')); ?>" class="btn btn-primary" style="width:100%;background-color:red">
 						KEMBALI KE DATA BUKU
 					</a>
@@ -113,25 +117,6 @@
 	</div>
 </div>
 <?php $__env->stopSection(); ?>
-<?php $__env->startSection('datatable'); ?>
-<script src="<?php echo e(asset('js/selectize.min.js')); ?>"></script>
-<script type="text/javascript">
-	$(document).ready(function () {
-	    $('select').selectize({
 
-            onFocus: function (){
-                category = this.getValue();
-                this.clear(true);
-            },
-            onBlur:function () {
-                if(this.getValue().length == 0 && this.getValue() != category){
-                    this.setValue(category);
-                }
-            }
-
-        });
-	});
-</script>
-<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ASUS\Documents\GitHub\UCM-Perpustakaan\resources\views/admin/databuku/create.blade.php ENDPATH**/ ?>

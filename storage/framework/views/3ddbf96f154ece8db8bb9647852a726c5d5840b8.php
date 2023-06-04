@@ -23,11 +23,18 @@
 		<h4><b>Jumlah Denda:</b> Rp 0</h4>
 		<?php else: ?>
 		<?php 
+		$denda = 0;
 		$date1 = new DateTime(date("Y-m-d", strtotime("+7 day", strtotime($value->tanggalpeminjaman))));
 		$date2 = new DateTime(date("Y-m-d"));
 		$interval = $date1->diff($date2);
+		if($interval->days * 5000 >35000)
+			$denda = 35000;
+		else
+			$denda = $interval->days * 5000;
+		
 		?>
-		<h4><b>Jumlah Denda:</b> Rp <?php echo e(number_format($interval->days * 5000),0); ?></h4>
+		
+		<h4><b>Jumlah Denda:</b> Rp <?php echo e(number_format($denda),0); ?></h4>
 		<?php endif; ?>
 		<h4><b>Catatan: <?php echo e($value->catatan); ?></b> 
 		<h4><b>Status Peminjaman:</b> 
@@ -38,7 +45,11 @@
 			<div class="preview col-md-4">
 				<div class="preview-pic tab-content">
 				  	<div class="tab-pane active" id="pic-1">
-				  		<img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="img-responsive"/>
+						<?php if($value === true): ?>
+						<img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="img-responsive"/>
+						<?php else: ?>
+						<img src="<?php echo e(asset('img/fotocoverbuku/default.png')); ?>" class="img-responsive"/>
+						<?php endif; ?>
 				  	</div>
 				</div>
 			</div>
@@ -58,7 +69,7 @@
 		<hr>
 		<?php if($value->id_pengembalian == null): ?>
 		<h4>Belum Ada Data Pengembalian Untuk Peminjaman Ini</h4>
-		<a href="<?php echo e(url('datatransaksi/datapengembalian/create?id_peminjaman=')); ?><?php echo e($value->id_peminjaman2); ?>" class="btn btn-primary">Tambah Data Pengembalian</a>
+		<a href="<?php echo e(url('/datapengembalian/create?id_peminjaman=')); ?><?php echo e($value->id_peminjaman2); ?>" class="btn btn-primary">Tambah Data Pengembalian</a>
 		<?php else: ?>
 		<h4><b>Kode Pengembalian:</b> <?php echo e($value->kode_pengembalian); ?></h4>
 		<h4><b>Tanggal Pengembalian:</b> <?php echo e(date("l, d M Y", strtotime($value->tanggalpengembalian))); ?></h4>
