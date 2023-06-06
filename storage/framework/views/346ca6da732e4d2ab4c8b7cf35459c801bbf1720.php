@@ -1,11 +1,11 @@
 <div class="col-md-4" style="margin-top:20px">
     <div class="card h-100" >
         <!-- Product image-->
-            <?php if(is_null($value->fotocoverbuku)): ?>
-            <img src="<?php echo e(asset('img/fotocoverbuku/default.png')); ?>" class="img-responsive center"/>
-            <?php else: ?>
-            <img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="img-responsive center"/>
-            <?php endif; ?>
+        <?php if(is_null($value->fotocoverbuku)): ?>
+        <img src="<?php echo e(asset('img/fotocoverbuku/default.png')); ?>" class="img-responsive"/>
+        <?php else: ?>
+        <img src="<?php echo e(asset('img/fotocoverbuku')); ?>/<?php echo e($value->fotocoverbuku); ?>" class="img-responsive"/>
+        <?php endif; ?>
         
         
         <!-- Product details-->

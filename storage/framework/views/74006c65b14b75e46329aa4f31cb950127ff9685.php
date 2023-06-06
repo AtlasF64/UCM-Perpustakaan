@@ -74,7 +74,7 @@
 				<label id="jumlahdenda" class="col-md-4 control-label">Nominal Denda Yang Dibayarkan <font style="color:red">*</font></label>
 				<div class="col-md-6">
 					<?php if(isset($_GET['id_peminjaman2'])): ?>
-					<input type="number" value="<?php echo e($_GET[$denda]); ?>" id="jumlahdenda" class="form-control" name="jumlahdenda" required	>
+					<input type="number" value="<?php echo e($_GET['$denda']); ?>" id="jumlahdenda" class="form-control" name="jumlahdenda" required>
 					<?php else: ?>
 					<input type="number" value="0" id="jumlahdenda" class="form-control" name="jumlahdenda" required/>
 					<?php endif; ?>

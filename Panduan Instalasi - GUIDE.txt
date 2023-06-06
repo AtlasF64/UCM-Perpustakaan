@@ -1,0 +1,44 @@
+UCM PERPUSTAKAAN
+Oleh: JEFFRY - 20010030010
+TGL: 6/6/2023
+FRAMEWORK: LARAVEL 7
+
+CARA JALANKAN APLIKASI:
+1. Ekstrak file ke folder xampp/htdocs
+2. Impor-kan file "jeffry-perpustakaan.sql" yang didalam folder "UCM-Perpustakaan" ke dalam phpmyadmin.
+3. buka folder UCM-Perpustakaan dengan CMD
+	- bisa buka dengan Visual Studio Code
+4. Dalam terminal-nya, ketik "php artisan serve" dan tunggu link
+http://127.0.0.1:8000 muncul
+5. Setelah munncul, buka link tersebut di browser.
+6. Silahkan login sebagain:
+	- Admin: admin@admin.com; pass: 123456
+	- User: kennedy@gmail.com; pass: 123456 (atau boleh registrasi sendiri).
+7. Sebagai Admin, bisa menambah Buku.
+	- sebagai paduan, admin harus membuat kategori dan rak sebelum menambah buku.
+8. Peminjaman Buku: 
+	1. di situs admin, klik Transaksi > Data Peminjaman
+	2. Klik Tambah Data Peminjaman
+	3. isi form-nya dan submit.
+	4. Peminjaman Buku berhasil dibuat
+9. Pengembalian Buku:
+	1. di situs admin, klik Transaksi > Data Pengembalian.
+	2. Pastikan ada transaksi pinjaman buku, kemudian Klik Tambah 10. Data Pengembalian
+	3. isi formulir, pilih buku dari user yang ingin dikembalikan
+	4. Isi Denda sesuai dengan tanggal lama pengembaliannya. Lalu, Submit, dan selesai.
+
+
+Fitur:
+- CRUD Database BUKU
+- Status Peminjaman Buku
+- Transaksi Peminjaman
+	- MAX DENDA 7 HARI HARGA DENDA (RP.35000)
+- Transaksi Pengembalian Buku
+- Fitur Ekspor ke CSV atau PDF
+- Admin Dashboard Database Datatable Fungsi Filter
+	- Sort Oldest Newest
+	- Show Column
+	- Export CSV / PDF
+- Situs UCM Perpustakaan
+	- Sortir Kumpulan Buku Baru dari ID Terbaru
+	- Sortir List Buku di "/books dari ID dan Tahun Terbaru

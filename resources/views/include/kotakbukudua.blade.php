@@ -1,11 +1,11 @@
 <div class="col-md-4" style="margin-top:20px">
     <div class="card h-100" >
         <!-- Product image-->
-            @if (is_null($value->fotocoverbuku))
-            <img src="{{asset('img/fotocoverbuku/default.png')}}" class="img-responsive center"/>
-            @else
-            <img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive center"/>
-            @endif
+        @if (is_null($value->fotocoverbuku))
+        <img src="{{asset('img/fotocoverbuku/default.png')}}" class="img-responsive"/>
+        @else
+        <img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive"/>
+        @endif
         
         {{-- <img class="card-img-top" src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}"
             alt="{{$value->fotocoverbuku}}" /> --}}

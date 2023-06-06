@@ -105,7 +105,7 @@ class BooksController extends Controller
         $simpan->kota = $request->get('kota');
         if($request->hasFile('fotocoverbuku'))
         {   
-            $fotocoverbuku = $simpan->fotocoverbuku;
+            $fotocoverbuku = 'fotocover' . date('YmdHis') . '.' . $request->file('fotocoverbuku')->getClientOriginalExtension();
             if (File::exists($fotocoverbuku)) {
                 File::delete($fotocoverbuku);
             }

@@ -109,7 +109,7 @@
                                         @include('include.statustransaksipeminjaman')
                                     </td>
                                     <td style="text-align:right">
-                                        <a href="{{ url('datatransaksi/datapeminjaman') }}/{{ $value->id_peminjaman2 }}"
+                                        <a href="{{ url('datapeminjaman') }}/{{ $value->id_peminjaman2 }}"
                                             style="color:skyblue"><i class="fa fa-eye"></i></a>
                                     </td>
                                     <td>

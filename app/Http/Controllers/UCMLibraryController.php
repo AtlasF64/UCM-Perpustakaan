@@ -30,7 +30,7 @@ class UCMLibraryController extends Controller
         }
         else
         {
-            $newbook = Buku::Join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->where('status_buku','!=','3')->orderby('id_buku','DESC')->take(9)->get();
+            $newbook = Buku::Join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->where('status_buku','!=','3')->orderby('id_buku','ASC')->take(9)->get();
             return view('ucmlibrary.ucmlibrary',compact('newbook'));
         }
     }

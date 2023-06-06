@@ -12,11 +12,10 @@
                 <div class="col-md-4">
                     <div class="preview-pic tab-content">
                         <div class="tab-pane active" id="pic-1">
-                            @if ($value === true)
-                                <img src="{{ asset('img/fotocoverbuku') }}/{{ $value->fotocoverbuku }}"
-                                    class="card-img-top" />
+                            @if (is_null($value->fotocoverbuku))
+                            <img src="{{asset('img/fotocoverbuku/default.png')}}" class="img-responsive" style="max-width: 100%"/>
                             @else
-                                <img src="{{ asset('img/fotocoverbuku/default.png') }}" class="card-img-top" />
+                            <img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive" style="max-width: 100%"/>
                             @endif
                             {{-- <img src="{{asset('img/fotocoverbuku')}}/{{$value->fotocoverbuku}}" class="img-responsive" style="width: 100%" /> --}}
                         </div>

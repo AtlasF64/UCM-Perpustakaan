@@ -97,7 +97,7 @@
                                         <?php echo $__env->make('include.statustransaksipeminjaman', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                     </td>
                                     <td style="text-align:right">
-                                        <a href="<?php echo e(url('datatransaksi/datapeminjaman')); ?>/<?php echo e($value->id_peminjaman2); ?>"
+                                        <a href="<?php echo e(url('datapeminjaman')); ?>/<?php echo e($value->id_peminjaman2); ?>"
                                             style="color:skyblue"><i class="fa fa-eye"></i></a>
                                     </td>
                                     <td>
