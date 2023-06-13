@@ -21,16 +21,16 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-md-6 col-md-offset-4">
+				<div class="col-md-6 col-md-offset-4 mt-2">
 					<button type="submit" class="btn btn-primary" style="width:100%">
 						SUBMIT
 					</button>
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-md-6 col-md-offset-4">
+				<div class="col-md-6 col-md-offset-4 mt-2">
 					<a href="<?php echo e(url('datarakbuku')); ?>" class="btn btn-primary" style="width:100%;background-color:red">
-						KEMBALI KE DATA GENRE BUKU
+						KEMBALI KE DATA RAK BUKU
 					</a>
 				</div>
 			</div>

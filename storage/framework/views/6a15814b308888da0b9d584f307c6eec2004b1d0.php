@@ -1,8 +1,8 @@
-@extends('layouts.app')
 
 
-@section('content')
-<script src="{{ asset('js/selectize.min.js') }}"></script>
+
+<?php $__env->startSection('content'); ?>
+<script src="<?php echo e(asset('js/selectize.min.js')); ?>"></script>
     <div class="container" style="padding:20px;padding-top:75px">
         <h2 class="tengah">Tambah Data Peminjaman Buku</h2>
         <?php if(Session::has('message_success')): ?>
@@ -18,23 +18,24 @@
 
         <div class="row">
             <form class="form-horizontal" enctype="multipart/form-data" style="padding:20px" role="form" method="POST"
-                action="{{ url('datapeminjaman') }}">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                action="<?php echo e(url('datapeminjaman')); ?>">
+                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
                 <div class="form-group">
                     <label id="id_buku" class="col-md-4 control-label">Pilih Buku <font style="color:red">*</font></label>
                     <div class="col-md-6">
                         <select id="id_buku" name="id_buku" class="form-control" required="required">
-                            {{-- <option value="" selected disabled hidden>Pilih Buku</option> --}}
-                            @foreach ($databuku as $key => $value)
-                                <option value="{{ $value->id_buku }}" 
+                            
+                            <?php $__currentLoopData = $databuku; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($value->id_buku); ?>" 
                                 <?php 
                                 if (isset($_GET['id_buku']) == $value->id_buku) {
                                     echo 'selected';
                                 } ?>>
-                                Kode: {{ $value->kodebuku }},
-                                    Judul: {{ $value->judulbuku }}, Author: {{ $value->author }}, Tahun: {{ $value->tahun }}
+                                Kode: <?php echo e($value->kodebuku); ?>,
+                                    Judul: <?php echo e($value->judulbuku); ?>, Author: <?php echo e($value->author); ?>, Tahun: <?php echo e($value->tahun); ?>
+
                                 </option>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>
                 </div>
@@ -51,18 +52,18 @@
                         </label>
                     <div class="col-md-6">
                         <select id="id_member" name="id_member" class="form-control" required="required">
-                            <option value="" selected disabled hidden>Pilih Peminjam/Member</option>
-                            @foreach ($datauser as $key => $value)
-                                <option value="{{ $value->id_member }}">Nama: {{ $value->name }}, Nomor Member:
-                                    {{ $value->nimnidnnip }}, Nomor Telepon: {{ $value->nomortelepon }}</option>
-                            @endforeach
+                            
+                            
+                                <option value="<?php echo e($value->id_member); ?>">Nama: <?php echo e($value->name); ?>, Nomor Member:
+                                    <?php echo e($value->nimnidnnip); ?>, Nomor Telepon: <?php echo e($value->nomortelepon); ?></option>
+                            
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label id="catatan" class="col-md-4 control-label">Catatan</label>
                     <div class="col-md-6">
-                        <textarea id="catatan" name="catatan" class="form-control" placeholder="Catatan/Keterangan Peminjaman">{{ $value->catatan }}</textarea>
+                        <textarea id="catatan" name="catatan" class="form-control" placeholder="Catatan/Keterangan Peminjaman"><?php echo e($value->catatan); ?></textarea>
                     </div>
                 </div>
 
@@ -75,7 +76,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-4 mt-2">
-                        <a href="{{ url('datapeminjaman') }}" class="btn btn-primary"
+                        <a href="<?php echo e(url('datapeminjaman')); ?>" class="btn btn-primary"
                             style="width:100%;background-color:red">
                             KEMBALI KE DATA TRANSAKSI
                         </a>
@@ -84,24 +85,7 @@
             </form>
         </div>
     </div>
-@endsection
-{{-- @section('datatable')
-    <script src="{{ asset('js/selectize.min.js') }}"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('select').selectize({
+<?php $__env->stopSection(); ?>
 
-                onFocus: function() {
-                    category = this.getValue();
-                    this.clear(true);
-                },
-                onBlur: function() {
-                    if (this.getValue().length == 0 && this.getValue() != category) {
-                        this.setValue(category);
-                    }
-                }
 
-            });
-        });
-    </script>
-@endsection --}}
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ASUS\Documents\GitHub\UCM-Perpustakaan\resources\views/admin/datatransaksi/datapeminjaman/edit.blade.php ENDPATH**/ ?>

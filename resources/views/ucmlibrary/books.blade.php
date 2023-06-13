@@ -3,10 +3,19 @@
 @section('content')
 <div class="container">
     <form action="">
+        
         <div cass="row" style="padding-top:20px">
             <div class="col-4"  style="float:left">
                 <input type="text" name="judul" class="form-control" placeholder="Masukkan Judul Buku" value="{{$_GET['judul']}}">
             </div>
+            {{-- <div class="col-4"  style="float:left">
+                <select id="kategoribuku" name="kategoribuku" class="form-control">
+                    <option value="" selected disabled hidden>Pilih Kategori</option>
+                    @foreach($datakategoribuku as $key => $value)
+                    <option value="{{$value->id_kategoribuku}}">{{$value->kategoribuku}}</option>
+                    @endforeach
+                </select>
+            </div> --}}
             {{-- <div class="col-4"  style="float:left">
                 <input type="text" name="genre" class="form-control" placeholder="Masukkan Genre Buku" value="{{$_GET['genre']}}">
             </div> --}}

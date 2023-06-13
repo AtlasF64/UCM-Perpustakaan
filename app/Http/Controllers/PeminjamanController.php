@@ -38,7 +38,7 @@ class PeminjamanController extends Controller
     public function store(Request $request)
     {
         $sudah = Peminjaman::leftJoin('pengembalian','pengembalian.id_peminjaman','=','peminjaman.id_peminjaman')->where('id_member','=',$request->get('id_member'))->where('id_pengembalian','=',null)->count();
-        if($sudah == 1)
+        if($sudah == 3)
         {
              return redirect()->back()->with('message_failed', 'Member Yang Bersangkutan Belum Mengembalikan Buku Yang Dipinjam Sebelumnya');
         }
@@ -63,7 +63,11 @@ class PeminjamanController extends Controller
 
     public function edit($id)
     {   
-       
+        $databuku = Buku::join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->orderby('judulbuku','ASC')->where('status_buku','=','0')->get();
+        $datauser = User::join('member','member.id','=','users.id')->orderby('name','ASC')->where('status_akun','!=','0')->get();
+        $value = Peminjaman::select('peminjaman.*','peminjaman.id_peminjaman as id_peminjaman2','pengembalian.*','member.*','users.*','buku.*','kategoribuku.*')->leftJoin('pengembalian','pengembalian.id_peminjaman','=','peminjaman.id_peminjaman')->join('member','member.id_member','=','peminjaman.id_member')->join('users','users.id','=','member.id')->join('buku','buku.id_buku','=','peminjaman.id_buku')->join('kategoribuku','kategoribuku.id_kategoribuku','=','buku.id_kategoribuku')->find($id);
+        
+        return view('admin.datatransaksi.datapeminjaman.edit',compact('databuku','datauser','value'));
     }
     
     public function update($id,Request $request)

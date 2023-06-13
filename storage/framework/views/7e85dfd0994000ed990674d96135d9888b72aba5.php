@@ -13,7 +13,7 @@
         <div class="card-body p-4">
             <div class="text-center" style="max-height: 100%">
                 <!-- Product name-->
-                <h5 class="fw-bolder"><b><?php echo e($value->judulbuku); ?></b></h5>
+                <h5 class="fw-bolder" ><b><?php echo e($value->judulbuku); ?></b></h5>
                 <!-- Product price-->
             </div>
             <hr>

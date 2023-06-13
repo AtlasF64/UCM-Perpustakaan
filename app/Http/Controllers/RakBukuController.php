@@ -21,7 +21,14 @@ class RakBukuController extends Controller
     public function store(Request $request)
     {
     	$simpan = new RakBuku;
-    	$simpan->rakbuku = $request->get('rakbuku');
+    	if (RakBuku::where('rakbuku', $request['rakbuku'])->first()) {
+            
+            return redirect('datarakbuku/create')->withInput()->with('message_failed', 'Maaf, Rak Buku ' . $request->get('rakbuku') . '  sudah ada.');
+            
+        }
+        else {
+            $simpan->rakbuku = $request->get('rakbuku');
+        }
     	$simpan->save();
     	return redirect('datarakbuku/create')->with('message_success', 'Data Genre Buku Berhasil Ditambahkan');
     }
@@ -35,7 +42,17 @@ class RakBukuController extends Controller
     public function update($id,Request $request)
     {
     	$simpan = RakBuku::find($id);
-    	$simpan->rakbuku = $request->get('rakbuku');
+    	$existingRakBuku = RakBuku::where('rakbuku', $request['rakbuku'])
+            ->where('id_rakbuku', '!=', $id)
+            ->first();
+
+        if ($existingRakBuku) {
+            return redirect('datarakbuku/' . $id . '/edit')
+                ->withInput()
+                ->with('message_failed', 'Maaf, Rak Buku ' . $request->get('rakbuku') . ' sudah ada.');
+        } else {
+            $simpan->rakbuku = $request->get('rakbuku');
+        }
     	$simpan->save();
     	return redirect('datarakbuku/' . $id . '/edit')->with('message_success', 'Data Genre Buku Berhasil Diubah');
 

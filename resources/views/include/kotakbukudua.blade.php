@@ -11,7 +11,7 @@
             alt="{{$value->fotocoverbuku}}" /> --}}
         <!-- Product details-->
         <div class="card-body p-4">
-            <div class="text-center" style="height:80px">
+            <div class="text-center" style="max-height: 100%">
                 <!-- Product name-->
                 <h5 class="fw-bolder"><b>{{$value->judulbuku}}</b></h5>
                 <!-- Product price-->

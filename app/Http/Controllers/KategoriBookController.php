@@ -21,7 +21,15 @@ class KategoriBookController extends Controller
     public function store(Request $request)
     {
     	$simpan = new KategoriBuku;
-    	$simpan->kategoribuku = $request->get('kategoribuku');
+        if (KategoriBuku::where('kategoribuku', $request['kategoribuku'])->first()) {
+            
+            return redirect('datakategoribuku/create')->withInput()->with('message_failed', 'Maaf, Kategori ' . $request->get('kategoribuku') . '  Buku sudah ada.');
+            
+        }
+        else {
+            $simpan->kategoribuku = $request->get('kategoribuku');
+        }
+    	
     	$simpan->save();
     	return redirect('datakategoribuku/create')->with('message_success', 'Data Kategori Buku Berhasil Ditambahkan');
     }
@@ -35,7 +43,17 @@ class KategoriBookController extends Controller
     public function update($id,Request $request)
     {
     	$simpan = KategoriBuku::find($id);
-    	$simpan->kategoribuku = $request->get('kategoribuku');
+    	$existingKategoriBuku = KategoriBuku::where('kategoribuku', $request['kategoribuku'])
+            ->where('id_kategoribuku', '!=', $id)
+            ->first();
+
+        if ($existingKategoriBuku) {
+            return redirect('datakategoribuku/' . $id . '/edit')
+                ->withInput()
+                ->with('message_failed', 'Maaf, Kategori Buku ' . $request->get('kategoribuku') . ' sudah ada.');
+        } else {
+            $simpan->kategoribuku = $request->get('kategoribuku');
+        }
     	$simpan->save();
     	return redirect('datakategoribuku/' . $id . '/edit')->with('message_success', 'Data Kategori Buku Berhasil Diubah');
 

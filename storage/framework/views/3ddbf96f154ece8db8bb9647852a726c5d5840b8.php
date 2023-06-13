@@ -16,6 +16,7 @@
 	<div class="row">
 		<h3><b>Informasi Peminjaman Buku</b></h3>
 		<hr>
+		<h4><b>Nama Peminjam:</b> <?php echo e($value->name); ?></h4>
 		<h4><b>Kode Peminjaman:</b> <?php echo e($value->kode_peminjaman); ?></h4>
 		<h4><b>Tanggal Peminjaman:</b> <?php echo e(date("l, d M Y", strtotime($value->tanggalpeminjaman))); ?></h4>
 		<h4><b>Tanggal Jatuh Tempo:</b> <?php echo e(date("l, d M Y", strtotime("+7 day", strtotime($value->tanggalpeminjaman)))); ?></h4>
@@ -27,10 +28,10 @@
 		$date1 = new DateTime(date("Y-m-d", strtotime("+7 day", strtotime($value->tanggalpeminjaman))));
 		$date2 = new DateTime(date("Y-m-d"));
 		$interval = $date1->diff($date2);
-		if($interval->days * 5000 >35000)
-			$denda = 35000;
+		if($interval->days * 10000 > 140000)
+			$denda = 140000;
 		else
-			$denda = $interval->days * 5000;
+			$denda = $interval->days * 10000;
 		
 		?>
 		
@@ -54,6 +55,7 @@
 				</div>
 			</div>
 			<div class="details col-md-8">
+				
 				<h4><b>Judul Buku:</b> <?php echo e($value->judulbuku); ?></h4>
 				<h4><b>Kode Buku:</b> <?php echo e($value->kodebuku); ?></h4>
 				<h4><b>Status:</b> <?php echo $__env->make('include/statuspeminjaman', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?></h4>

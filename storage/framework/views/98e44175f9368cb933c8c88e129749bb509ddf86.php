@@ -3,10 +3,12 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <form action="">
+        
         <div cass="row" style="padding-top:20px">
             <div class="col-4"  style="float:left">
                 <input type="text" name="judul" class="form-control" placeholder="Masukkan Judul Buku" value="<?php echo e($_GET['judul']); ?>">
             </div>
+            
             
             <div class="col-3" style="float:left">
                 <button type="submit" class="btn btn-primary" style="width:100%">CARI</button>

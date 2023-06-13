@@ -23,8 +23,7 @@
                 <div class="form-group">
                     <label id="kodebuku" class="col-md-4 control-label">Kode Buku <font style="color:red">*</font></label>
                     <div class="col-md-6">
-                        <input type="text" id="kodebuku" class="form-control" name="kodebuku" maxlength="12"
-                            value="{{ $databuku->kodebuku }}"/>
+                        <input type="text" id="kodebuku" class="form-control" name="kodebuku" maxlength="12" value="{{ $databuku->kodebuku }}"/>
                     </div>
                 </div>
 

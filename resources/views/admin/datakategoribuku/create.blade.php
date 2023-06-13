@@ -25,7 +25,7 @@
 			<div class="form-group">
 				<div class="col-md-6 col-md-offset-4 mt-2">
 					<button type="submit" class="btn btn-primary" style="width:100%">
-						SUBMIT
+						SUBMIT 
 					</button>
 				</div>
 			</div>

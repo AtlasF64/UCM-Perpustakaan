@@ -49,10 +49,10 @@
 						$date1 = new DateTime(date("Y-m-d", strtotime("+7 day", strtotime($value->tanggalpeminjaman))));
 						$date2 = new DateTime(date("Y-m-d"));
 						$interval = $date1->diff($date2);
-						if($interval->days * 5000 > 35000)
-							$denda = 35000;
+						if($interval->days * 10000 > 140000)
+							$denda = 140000;
 						else
-							$denda = $interval->days * 5000;
+							$denda = $interval->days * 10000;
 						?>
 						@if(date('Y-m-d') <= date('Y-m-d', strtotime("+7 day", strtotime($value->tanggalpeminjaman))))
 						<option value="{{$value->id_peminjaman2}}">Kode: {{$value->kode_peminjaman}}, Judul Buku:  {{$value->judulbuku}}, Member: {{$value->name}}, Telat: 0 Hari, Jumlah Denda: Rp 0</option>
